@@ -1,0 +1,41 @@
+.sup {
+    background-color: rgb(119, 0, 255);
+    color: azure;
+    //    margin-left: 240px;
+    width: 100%;
+}
+
+.cont {
+    padding: 12px;
+    height: 2000px;
+}
+
+.person {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 100%;
+}
+
+.son {
+    height: 200px;
+    width: 200px;
+    border-radius: 9999px;
+    display: flex center;
+    align-items: center;
+
+}
+
+.don {
+
+    align-items: center;
+    display: flex center;
+    padding-left: 50px;
+
+}
+
+.linkus {
+    background: #000;
+}

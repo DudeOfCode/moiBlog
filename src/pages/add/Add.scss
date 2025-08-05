@@ -1,0 +1,62 @@
+.add {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 1400px;
+        padding: 50px 0px;
+
+        h1 {
+            width: max-content;
+            margin-bottom: 30px;
+            color: rgb(226, 77, 77);
+            font-weight: 300;
+        }
+
+        .sections {
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+            margin-left: 15px;
+
+            label {
+                color: rgb(207, 38, 38);
+                font-size: 18px;
+            }
+
+            .info,
+            .details {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: space-between;
+                margin-right: 15px;
+
+                input,
+                select,
+                textarea {
+                    padding: 20px;
+                }
+
+
+            }
+        }
+    }
+}
+
+.post-button {
+    border: 2px solid black;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #1dbf73;
+    cursor: pointer;
+    border-radius: 17%;
+}
+
+.timeSelect {
+    width: 100px;
+    height: 3px;
+}
