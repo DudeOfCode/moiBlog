@@ -189,7 +189,7 @@ export default function App() {
                                                 <p>{message.postBody}</p>
                                                 {/* <p>{message.price}</p> */}
                                                 <p>{message.tags}</p>
-                                                <p>{message.uploadTime}</p>
+                                                {/* <p>{message.uploadTime}</p> */}
                                                 {/* <p>{message.category}</p>
                                                 <p>{message.course}</p>
                                                 <p>{message.type}</p> */}
