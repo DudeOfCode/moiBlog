@@ -9,7 +9,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Add from "./pages/add/Add";
 import Gigs from "./pages/gigs/Gigs"
-import MyGig from "./pages/myGig/myGig"
+// import MyGig from "./pages/myGig/myGig"
 import Test from "./pages/test/Test";
 import InPro from "./pages/inProgress/InPro";
 import Comp from "./pages/comp/Comp";
@@ -18,6 +18,7 @@ import Forge from "./pages/forge/Forge";
 // import { auth, googleProvider } from "./config/firebaseConfig";
 import MyProgress from "./pages/myProgress/MyProgress";
 import MyComp from "./pages/myComp/MyComp";
+import Video from "./pages/video/Video";
 
 
 
@@ -99,6 +100,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/apage",
+      element: <Video />,
     },
     {
       path: "/progress",

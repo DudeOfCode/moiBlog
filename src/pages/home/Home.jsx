@@ -10,7 +10,7 @@ const Home = () => {
     <section>
 
 
-     
+
 
 
       <div className="cont">
@@ -32,6 +32,7 @@ const Home = () => {
         <br />
         <p>Dash B</p>
         <Link to="/dashboard"> <button className="sup">Your Things</button></Link>
+        <Link to="/apage"> <button className="sup">Videos</button></Link>
 
         <br />
         <p>Cart</p>
