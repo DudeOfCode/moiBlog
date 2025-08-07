@@ -1,6 +1,5 @@
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider, Routes, Route } from "react-router-dom";
-import React from "react";
 import Nabar from "./components/navbar/Navbar";
 import ProtectedRoutes from "./components/protected/ProtectedRoutes";
 import HomeNav from "./components/homeNavbar/HomeNav";
@@ -24,7 +23,6 @@ import Video from "./pages/video/Video";
 function App() {
   const Layout = () => {
     return (
-
       <Outlet />)
     {/* <HomeNav /> */ }
   };
