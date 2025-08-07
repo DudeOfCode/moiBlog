@@ -38,15 +38,15 @@ const MyGig = () => {
 
 
 
-  const updateTask = useMutation(api.messages.updateTask);
-  const updateTitle = useMutation(api.messages.updateTitle);
-  const updateDescriptions = useMutation(api.messages.updateDescription);
-  const updateTags = useMutation(api.messages.updateTags);
-  const updateDeliveryTime = useMutation(api.messages.updateDeliveryTime);
-  const updatePrices = useMutation(api.messages.updatePrice);
-  const updateCategories = useMutation(api.messages.updateCategory);
-  const updateCourse = useMutation(api.messages.updateCourse);
-  const deleteProj = useMutation(api.messages.deleteProj);
+  // const updateTask = useMutation(api.messages.updateTask);
+  // const updateTitle = useMutation(api.messages.updateTitle);
+  // const updateDescriptions = useMutation(api.messages.updateDescription);
+  // const updateTags = useMutation(api.messages.updateTags);
+  // const updateDeliveryTime = useMutation(api.messages.updateDeliveryTime);
+  // const updatePrices = useMutation(api.messages.updatePrice);
+  // const updateCategories = useMutation(api.messages.updateCategory);
+  // const updateCourse = useMutation(api.messages.updateCourse);
+  // const deleteProj = useMutation(api.messages.deleteProj);
 
 
   const pdf = "pdf"
@@ -59,61 +59,61 @@ const MyGig = () => {
   // const [isOwner] = (auth?.currentUser?.email == update);
 
   //Edit Section
-  const updateProjectTitle = async (_id) => {
-    await updateTitle(
-      {
-        id: _id,
-        title: updatedTitle,
+  // const updateProjectTitle = async (_id) => {
+  //   await updateTitle(
+  //     {
+  //       id: _id,
+  //       title: updatedTitle,
 
-      }
-    )
-  }
+  //     }
+  //   )
+  // }
 
-  const updateProjectCategory = async (_id) => {
-    await updateCategories({
-      id: _id,
-      category: updateCategory,
-    })
-  }
-  const updateProjectPrice = async (_id) => {
-    await updatePrices({
-      id: _id,
-      price: updatePrice,
-    })
-  }
+  // const updateProjectCategory = async (_id) => {
+  //   await updateCategories({
+  //     id: _id,
+  //     category: updateCategory,
+  //   })
+  // }
+  // const updateProjectPrice = async (_id) => {
+  //   await updatePrices({
+  //     id: _id,
+  //     price: updatePrice,
+  //   })
+  // }
 
 
-  const updateProjectTime = async (_id) => {
-    await updateDeliveryTime({
-      id: _id,
-      deliveryTime: updateTime,
-    })
-  }
-  const updateProjectCourses = async (_id) => {
-    await updateCourse({
-      id: _id,
-      course: updateCourses,
+  // const updateProjectTime = async (_id) => {
+  //   await updateDeliveryTime({
+  //     id: _id,
+  //     deliveryTime: updateTime,
+  //   })
+  // }
+  // const updateProjectCourses = async (_id) => {
+  //   await updateCourse({
+  //     id: _id,
+  //     course: updateCourses,
 
-    })
-  }
-  const updateProjectDescription = async (_id) => {
-    await updateDescriptions({
-      id: _id,
-      description: updateDescription,
-    })
-  }
-  const updateProjectTag = async (_id) => {
-    await updateTags({
-      id: _id,
-      tags: updateTag,
-    })
-  }
+  //   })
+  // }
+  // const updateProjectDescription = async (_id) => {
+  //   await updateDescriptions({
+  //     id: _id,
+  //     description: updateDescription,
+  //   })
+  // }
+  // const updateProjectTag = async (_id) => {
+  //   await updateTags({
+  //     id: _id,
+  //     tags: updateTag,
+  //   })
+  // }
 
-  const deleteProject = async (_id) => {
-    await deleteProj({
-      id: _id
-    })
-  };
+  // const deleteProject = async (_id) => {
+  //   await deleteProj({
+  //     id: _id
+  //   })
+  // };
 
 
 
@@ -135,8 +135,8 @@ const MyGig = () => {
   return (
 
     <div className="App">
-
       <div>
+        {/* <div>
         <div className='details'><p ><h1>{auth?.currentUser?.email}</h1></p>
           <p><h2>{auth?.currentUser?.displayName}</h2></p>
         </div>
@@ -183,7 +183,7 @@ const MyGig = () => {
                               {message.type == "pdf" ? (<div>
                                 <h1 hidden>{bodies.splice(1, 1)}</h1>
                                 {/* <h1 hidden>{body.pop(".").last("")}</h1 > */}
-                                <a href={link + (body)} target="_blank" rel="noopener noreferrer" >
+        {/* <a href={link + (body)} target="_blank" rel="noopener noreferrer" >
                                   <FontAwesomeIcon icon={faFilePdf}
                                     key={index}
                                     width="auto"
@@ -326,23 +326,12 @@ const MyGig = () => {
 
             </li>
           ))}
-        </ul>
-
-      </div>
-    </div >
-  )
-
-
-
-
-
-
-
-
-
-
-
+        </ul> */}
+    Something is up
+        </div>
+      </div >
+ )
 
 }
 
-export default MyGig
+      export default MyGig
