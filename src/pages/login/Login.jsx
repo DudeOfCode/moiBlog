@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import "./Login.css"
 import { Link } from 'react-router-dom';
 import { auth, googleProvider } from "../../config/firebaseConfig";

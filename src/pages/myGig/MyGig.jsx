@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { auth, db } from "../../config/firebaseConfig";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
@@ -327,11 +326,11 @@ const MyGig = () => {
             </li>
           ))}
         </ul> */}
-    Something is up
-        </div>
-      </div >
- )
+        Something is up
+      </div>
+    </div >
+  )
 
 }
 
-      export default MyGig
+export default MyGig
