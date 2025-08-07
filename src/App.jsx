@@ -8,6 +8,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Add from "./pages/add/Add";
 import Gigs from "./pages/gigs/Gigs"
+import MyGig from "./pages/myGig/MyGig"
 import Test from "./pages/test/Test";
 import InPro from "./pages/inProgress/InPro";
 import Comp from "./pages/comp/Comp";
@@ -143,7 +144,7 @@ function App() {
         <Route path="video" element={<Video />} />
         <Route element={<ProtectedRoutes />}>
 
-          {/* <Route path="dashboard" element={<MyGig />} /> */}
+          <Route path="dashboard" element={<MyGig />} />
           <Route path="test" element={<Test />} />
           {/* <Route path="countdown" element={<CountdownTimer />} /> */}
           {/* <Route path="chat" element={<Chat />} /> */}
