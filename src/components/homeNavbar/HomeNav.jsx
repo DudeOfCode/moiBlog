@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import "./homeNav.css"
+import "./HomeNav.css"
 import { Link, useLocation } from "react-router-dom";
 const HomeNav = () => {
     return (
@@ -13,7 +13,7 @@ const HomeNav = () => {
 
                     <a href="#home">
                         <img src="https://img.youtube.com/vi/-HEjsVkfjOk/0.jpg" width="40px" height="40px" />{' '}
-                         P-App
+                        P-App
                     </a>
 
                 </Navbar.Brand>
