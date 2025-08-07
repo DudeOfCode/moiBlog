@@ -1,5 +1,5 @@
 import "./App.css";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider, Routes, Route } from "react-router-dom";
 import React from "react";
 import Nabar from "./components/navbar/Navbar";
 import ProtectedRoutes from "./components/protected/ProtectedRoutes";
@@ -130,7 +130,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/chat" element={<Chat />} />
         {/* <Route path="/nav" element={<HomeNav />} /> */}
-        <Route path="/navb" element={<Navbar />} />
+        <Route path="/navb" element={<Nabar />} />
         {/* <Route path="/forum" element={<Forum />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about" element={<AboutUs />} /> */}
