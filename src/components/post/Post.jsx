@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import "./Post.scss"
+import news from "./newsimg.jpg"
 const Post = () => {
     return (
         <div>
             <div className="post">
                 <img
                     className="postImg"
-                    src={"https://images.app.goo.gl/N91Da9Ps9jGuB2Qf9"}
+                    src={news}
                     alt=""
                 />
                 <div className="postInfo">

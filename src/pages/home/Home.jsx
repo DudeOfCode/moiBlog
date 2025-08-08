@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import "./Home.scss"
-import { auth } from "../../config/firebaseConfig";
+// import { auth } from "../../config/firebaseConfig";
 import Navbar from '../../components/navbar/Navbar';
 import Post from '../../components/post/Post';
 
