@@ -7,8 +7,8 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Add from "./pages/add/Add";
-import Gigs from "./pages/gigs/Gigs"
-import MyGig from "./pages/myGig/MyGig"
+import Gigs from "./pages/gigs/Gigs";
+import MyGig from "./pages/myGig/MyGig";
 import Test from "./pages/test/Test";
 import InPro from "./pages/inProgress/InPro";
 import Comp from "./pages/comp/Comp";
