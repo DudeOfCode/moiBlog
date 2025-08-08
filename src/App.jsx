@@ -141,7 +141,7 @@ function App() {
         <Route path="myprogress" element={<MyProgress />} />
         <Route path="mycompleted" element={<MyComp />} />
 
-        <Route path="video" element={<Video />} />
+        <Route path="apage" element={<Video />} />
         <Route element={<ProtectedRoutes />}>
 
           <Route path="dashboard" element={<MyGig />} />
