@@ -133,14 +133,14 @@ function Nabar() {
               <h5>
                 <img src={home} alt="" className="house" />
                 <b>
-                  <span >EduSphere</span>
+                  <span >moiBlog</span>
                 </b>
               </h5> </a>) : (
               <Link to="/" className="navOpts">
                 <h5>
                   <img src={home} alt="" className="house" />
                   <b>
-                    <span >EduSphere</span>
+                    <span >moiBlog</span>
                   </b>
                 </h5>
               </Link>

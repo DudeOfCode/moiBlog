@@ -3,20 +3,35 @@ import { Link } from "react-router-dom";
 import "./Home.scss"
 import { auth } from "../../config/firebaseConfig";
 import Navbar from '../../components/navbar/Navbar';
+import Post from '../../components/post/Post';
 
 import Register from '../register/Register';
 const Home = () => {
   return (
     <section>
-
-
-
-
+      <Navbar />
 
       <div className="cont">
         <a id="contact-us"> </a>
-        <h1>Contact Us</h1>
-        <button><a href="#about-us">About us</a></button>
+        <h1>Blog on Progress</h1>
+        <br />
+
+        <div className="for-post">
+          <Post />
+          <Post />
+        </div>
+
+        <div className="for-post">
+          <Post />
+          <Post />
+        </div>
+
+        <div className="for-post">
+          <Post />
+          <Post />
+
+        </div>
+
 
       </div>
       <div className='linkus'>

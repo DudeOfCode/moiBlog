@@ -39,3 +39,11 @@
 .linkus {
     background: #000;
 }
+
+.for-post {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    word-wrap: break-word;
+}
