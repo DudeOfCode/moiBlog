@@ -81,7 +81,7 @@ const Video = () => {
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://vimeo.com/crackingproductions/whitneyhouston?share=copy' controls />
+                        }} src='https://vimeo.com/100076860?share=copy' controls />
                     </span>
 
                 </div>
@@ -116,6 +116,13 @@ const Video = () => {
                             height: "auto",
                             "--controls": "none",
                         }} src='https://vimeo.com/112346303?share=copy' controls />
+                    </span>
+                    <span>
+                        <ReactPlayer style={{
+                            width: "20%",
+                            height: "auto",
+                            "--controls": "none",
+                        }} src='https://vimeo.com/11722925?share=copy' controls />
                     </span>
                     <span>
                         <ReactPlayer style={{
