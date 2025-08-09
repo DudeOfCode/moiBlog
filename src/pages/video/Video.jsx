@@ -20,7 +20,7 @@ const Video = () => {
 
 
     return (
-        <div className="off-lie">
+        <section className="off-lie">
             <div className="shift">
 
                 {/* <YouTube videoId="2g811Eo7K8U" /> */}
@@ -61,84 +61,72 @@ const Video = () => {
                 </div>
 
                 <div className='small-vid'>
-                    <div>
-                        <ReactPlayer style={{
-                            width: "20%",
-                            height: "auto",
-                            "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
-                    </div>
                     <span>
                         <ReactPlayer style={{
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
+                        }} src='https://vimeo.com/80815566?share=copy' controls />
                     </span>
                     <span>
                         <ReactPlayer style={{
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
+                        }} src='https://vimeo.com/1140132' controls />
                     </span>
 
-
+                    <span>
+                        <ReactPlayer style={{
+                            width: "20%",
+                            height: "auto",
+                            "--controls": "none",
+                        }} src='https://vimeo.com/crackingproductions/whitneyhouston?share=copy' controls />
+                    </span>
 
                 </div>
                 <div className='small-vid'>
-                    <div>
-                        <ReactPlayer style={{
-                            width: "20%",
-                            height: "auto",
-                            "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
-                    </div>
                     <span>
                         <ReactPlayer style={{
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
+                        }} src='https://vimeo.com/80815568?share=copy' controls />
                     </span>
                     <span>
                         <ReactPlayer style={{
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
+                        }} src='https://vimeo.com/80815569' controls />
                     </span>
-
-
+                    <span>
+                        <ReactPlayer style={{
+                            width: "20%",
+                            height: "auto",
+                            "--controls": "none",
+                        }} src='https://vimeo.com/79415037?share=copy' controls />
+                    </span>
 
                 </div>
                 <div className='small-vid'>
-                    <div>
-                        <ReactPlayer style={{
-                            width: "20%",
-                            height: "auto",
-                            "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
-                    </div>
                     <span>
                         <ReactPlayer style={{
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
+                        }} src='https://vimeo.com/112346303?share=copy' controls />
                     </span>
                     <span>
                         <ReactPlayer style={{
                             width: "20%",
                             height: "auto",
                             "--controls": "none",
-                        }} src='https://www.youtube.com/watch?v=LXb3EKWsInQ' controls />
+                        }} src='https://vimeo.com/337844840?fl=wc' controls />
                     </span>
-
                 </div>
-
             </div>
-        </div>
+        </section>
     )
 }
 
