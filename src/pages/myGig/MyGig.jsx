@@ -32,17 +32,14 @@ const MyGig = () => {
   const imageInput = useRef(null);
   const docInput = useRef(null);
 
-  // const [isUser, setIsUser] = useState(message.author = auth?.currentUser?.email)
+  // const [isUser, setIsUser] = useState(name = auth?.currentUser?.email)
 
 
   // const updateTask = useMutation(api.messages.updateTask);
   // const updateTitle = useMutation(api.messages.updateTitle);
-  // const updateDescriptions = useMutation(api.messages.updateDescription);
+  // const updateDescriptions = useMutation(api.messages.updatePostBody);
   // const updateTags = useMutation(api.messages.updateTags);
-  // const updateDeliveryTime = useMutation(api.messages.updateDeliveryTime);
-  // const updatePrices = useMutation(api.messages.updatePrice);
-  // const updateCategories = useMutation(api.messages.updateCategory);
-  // const updateCourse = useMutation(api.messages.updateCourse);
+  // const updateDeliveryTime = useMutation(api.messages.updateUploadTime);
   // const deleteProj = useMutation(api.messages.deleteProj);
 
 
@@ -86,24 +83,22 @@ const MyGig = () => {
                         modal
                         nested
                       >
+                        <div className='dee-pee'>
+
+                          <a href={link + (message.storageId)} target="_blank" rel="noopener noreferrer" >
+                            <img src={link + (message.storageId)} icon={faFilePdf}
+                              width="auto"
+                              height={200}
+                              className="pics"
+                            />
+
+                          </a>
+                        </div>
                         <p><h1>{message.title}</h1></p>
                         <p>{message.postBody}</p>
                         <p>{message.tags}</p>
                         <p>{message.uploadTime}</p>
                         <div>
-
-
-                          <div>
-
-                            <a href={link + (message.storageId)} target="_blank" rel="noopener noreferrer" >
-                              <img src={link + (message.storageId)} icon={faFilePdf}
-                                width="auto"
-                                height={200}
-                                className="pics"
-                              />
-
-                            </a>
-                          </div>
 
 
                           <Popup
@@ -139,34 +134,11 @@ const MyGig = () => {
                                         </div>
                                         <div class="omrs-input-group">
                                           <label class="omrs-input-underlined">
-                                            <input required placeholder="Edit Category" onChange={(e) => setUpdateCategory(e.target.value)} />
-
-                                          </label>
-                                          <span>  - </span>
-                                          <FontAwesomeIcon onClick={() => updateProjectCategory(message._id)} className="pen" icon={faPen} />
-                                        </div>
-                                        <div class="omrs-input-group">
-                                          <label class="omrs-input-underlined">
-                                            <FontAwesomeIcon onClick={() => updateProjectPrice(message._id)} className="pen" icon={faPen}
-                                            />
-                                            <input required placeholder="Edit Price" onChange={(e) => setUpdatePrice(Number(e.target.value))} />
-                                          </label>
-
-                                        </div>
-                                        <div class="omrs-input-group">
-                                          <label class="omrs-input-underlined">
-
-                                            <input placeholder="Edit Time" onChange={(e) => setUpdateTime(Number(e.target.value))} />
+                                            <input placeholder="Edit Time" onChange={(e) => setUploadTime(Number(e.target.value))} />
                                             <FontAwesomeIcon onClick={() => updateProjectTime(message._id)} className="pen" icon={faPen} />
                                           </label>
                                         </div>
-                                        <div class="omrs-input-group">
-                                          <label class="omrs-input-underlined">
-
-                                            <input required placeholder="Edit Course" onChange={(e) => setUpdateCourses(e.target.value)} />
-                                            <FontAwesomeIcon onClick={() => updateProjectCourses(message._id)} className="pen" icon={faPen} />
-                                          </label>
-                                        </div>
+                                     
                                       </form>
                                     </div>
                                     <div>
