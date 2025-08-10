@@ -17,12 +17,11 @@ import App from './App.jsx';
 // import UseList from "./pages/userList/UsersList";
 // import { Provider } from 'react-redux';
 
-import { createBrowserRouter, Outlet, RouterProvider, Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import React from 'react';
 
 import { ConvexProvider, ConvexReactClient } from "convex/react";
 const addr = import.meta.env.VITE_CONVEX_URL;
-
 const convex = new ConvexReactClient(addr);
 
 import './index.css';

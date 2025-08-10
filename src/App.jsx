@@ -17,6 +17,7 @@ import Forge from "./pages/forge/Forge";
 import MyProgress from "./pages/myProgress/MyProgress";
 import MyComp from "./pages/myComp/MyComp";
 import Video from "./pages/video/Video";
+import Settings from "./pages/settings/Settings";
 
 
 
@@ -140,6 +141,7 @@ function App() {
         <Route path="complete" element={<Comp />} />
         <Route path="myprogress" element={<MyProgress />} />
         <Route path="mycompleted" element={<MyComp />} />
+        <Route path="settings" element={<Settings />} />
 
         <Route path="apage" element={<Video />} />
         <Route element={<ProtectedRoutes />}>

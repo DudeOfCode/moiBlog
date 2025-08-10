@@ -62,6 +62,8 @@ const Home = () => {
         <Link to="/myprogress"> <button className="sup">myProgress</button></Link>
         <br />
         <Link to="/chat"> <button className="sup">Chat</button></Link>
+        <br />
+        <Link to="/settings"> <button className="sup">Settings</button></Link>
 
       </div>
     </section>
