@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import { useDropzone } from 'react-dropzone';
 import { auth, db } from "../../config/firebaseConfig";
-// import { getDocs, collection, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { faTrash, faPen, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useQuery, useMutation } from "convex/react";
@@ -18,7 +16,6 @@ import { Link } from 'react-router-dom';
 const Chat = () => {
 
   const sendChat = useMutation(api.forum.sendChat);
-  //...
   const chats = useQuery(api.forum.getMessages);
   const [newMessageText, setNewMessageText] = useState("");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);

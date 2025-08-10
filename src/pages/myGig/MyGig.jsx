@@ -32,105 +32,27 @@ const MyGig = () => {
   const imageInput = useRef(null);
   const docInput = useRef(null);
 
-  const [isUser, setIsUser] = useState(message.author = auth?.currentUser?.email)
+  // const [isUser, setIsUser] = useState(message.author = auth?.currentUser?.email)
 
 
-
-
-  const updateTask = useMutation(api.messages.updateTask);
-  const updateTitle = useMutation(api.messages.updateTitle);
-  const updateDescriptions = useMutation(api.messages.updateDescription);
-  const updateTags = useMutation(api.messages.updateTags);
-  const updateDeliveryTime = useMutation(api.messages.updateDeliveryTime);
-  const updatePrices = useMutation(api.messages.updatePrice);
-  const updateCategories = useMutation(api.messages.updateCategory);
-  const updateCourse = useMutation(api.messages.updateCourse);
-  const deleteProj = useMutation(api.messages.deleteProj);
+  // const updateTask = useMutation(api.messages.updateTask);
+  // const updateTitle = useMutation(api.messages.updateTitle);
+  // const updateDescriptions = useMutation(api.messages.updateDescription);
+  // const updateTags = useMutation(api.messages.updateTags);
+  // const updateDeliveryTime = useMutation(api.messages.updateDeliveryTime);
+  // const updatePrices = useMutation(api.messages.updatePrice);
+  // const updateCategories = useMutation(api.messages.updateCategory);
+  // const updateCourse = useMutation(api.messages.updateCourse);
+  // const deleteProj = useMutation(api.messages.deleteProj);
 
 
   const pdf = "pdf"
   const [name] = useState(() => auth?.currentUser?.email);
 
-  const messages = useQuery(api.messages.list) || [];
+  const messages = useQuery(api.posts.list) || [];
 
   const link = "https://dazzling-schnauzer-268.convex.site/getImage?storageId="
 
-  // const [isOwner] = (auth?.currentUser?.email == update);
-
-  //Edit Section
-  // const updateProjectTitle = async (_id) => {
-  //   await updateTitle(
-  //     {
-  //       id: _id,
-  //       title: updatedTitle,
-
-  //     }
-  //   )
-  // }
-
-  // const updateProjectCategory = async (_id) => {
-  //   await updateCategories({
-  //     id: _id,
-  //     category: updateCategory,
-  //   })
-  // }
-  // const updateProjectPrice = async (_id) => {
-  //   await updatePrices({
-  //     id: _id,
-  //     price: updatePrice,
-  //   })
-  // }
-
-
-  // const updateProjectTime = async (_id) => {
-  //   await updateDeliveryTime({
-  //     id: _id,
-  //     deliveryTime: updateTime,
-  //   })
-  // }
-  // const updateProjectCourses = async (_id) => {
-  //   await updateCourse({
-  //     id: _id,
-  //     course: updateCourses,
-
-  //   })
-  // }
-  // const updateProjectDescription = async (_id) => {
-  //   await updateDescriptions({
-  //     id: _id,
-  //     description: updateDescription,
-  //   })
-  // }
-  // const updateProjectTag = async (_id) => {
-  //   await updateTags({
-  //     id: _id,
-  //     tags: updateTag,
-  //   })
-  // }
-
-  // const deleteProject = async (_id) => {
-  //   await deleteProj({
-  //     id: _id
-  //   })
-  // };
-
-
-
-
-
-  // messages.map((message) => {
-  //   update = message.author
-  //   console.log(update)
-  //   supdate.push(message.author)
-  //   // return (message.author)
-  //   // return <div>{message.author}</div>
-
-  // },
-  //   console.log(supdate)
-  // )
-
-  // let supa = supdate.includes(auth?.currentUser?.email)
-  // console.log(supa)
   return (
 
     <div className="App">
@@ -150,10 +72,9 @@ const MyGig = () => {
                       <div class="card-img" color="red"><san></san></div>
                       <div class="card-info">
                         <p class="text-title">{message.title} </p>
-                        <p class="text-body">{message.description}</p>
+                        <p class="text-body">{message.postBody}</p>
                       </div>
                       <div class="card-footer">
-                        <span class="text-title">{message.price}</span>
                         <div class="card-button">
                           <FontAwesomeIcon onClick={() => deleteProject(message._id)} className="trash" icon={faTrash} />
                         </div>
@@ -166,52 +87,25 @@ const MyGig = () => {
                         nested
                       >
                         <p><h1>{message.title}</h1></p>
-                        <p>{message.description}</p>
-                        <p>{message.price}</p>
+                        <p>{message.postBody}</p>
                         <p>{message.tags}</p>
-                        <p>{message.deliveryTime}</p>
-                        <p>{message.category}</p>
-                        <p>{message.course}</p>
-                        <p>{message.type}</p>
+                        <p>{message.uploadTime}</p>
                         <div>
+
+
                           <div>
 
-                            {message.bodies.map((body, index, bodies) => (
+                            <a href={link + (message.storageId)} target="_blank" rel="noopener noreferrer" >
+                              <img src={link + (message.storageId)} icon={faFilePdf}
+                                width="auto"
+                                height={200}
+                                className="pics"
+                              />
 
-                              <div>
-                                {message.type == "pdf" ? (<div>
-                                  <h1 hidden>{bodies.splice(1, 1)}</h1>
-                                  <h1 hidden>{body.pop(".").last("")}</h1 >
-                                  <a href={link + (body)} target="_blank" rel="noopener noreferrer" >
-                                    <FontAwesomeIcon icon={faFilePdf}
-                                      key={index}
-                                      width="auto"
-                                      height={2000}
-                                      className="pics"
-                                    />
-
-                                  </a>
-
-                                </div>) : message.type == ("jpg" || "png" || "jpeg") && (
-                                  <div>
-                                    <img
-                                      key={index}
-                                      src={link + (body)}
-                                      width="auto"
-                                      height={200}
-                                      className="pics"
-                                    />
-                                  </div>
-                                )
-
-
-                                }
-
-
-                              </div>
-                            )
-                            )}
+                            </a>
                           </div>
+
+
                           <Popup
                             trigger={<FontAwesomeIcon className="pen" icon={faPen} />}
                             modal
@@ -232,7 +126,7 @@ const MyGig = () => {
 
                                   <div>
                                     <div>
-
+                                      {/* 
                                       <form>
                                         <div class="omrs-input-group">
                                           <label class="omrs-input-underlined">
@@ -299,7 +193,7 @@ const MyGig = () => {
                                         </div>
 
 
-                                      </form>
+                                      </form> */}
                                     </div>
                                   </div>
                                 </div>
