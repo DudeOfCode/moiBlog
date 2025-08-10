@@ -149,7 +149,7 @@ function App() {
           <Route path="dashboard" element={<MyGig />} />
           <Route path="test" element={<Test />} />
           {/* <Route path="countdown" element={<CountdownTimer />} /> */}
-          {/* <Route path="chat" element={<Chat />} /> */}
+          <Route path="chat" element={<Chat />} />
           {/* <Route path="settings" element={<Settings />} /> */}
         </Route>
       </Route>

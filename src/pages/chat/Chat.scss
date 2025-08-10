@@ -1,0 +1,461 @@
+// .trash {
+//     color: blue;
+
+//     :hover {
+//         color: red;
+//     }
+// }
+
+// .pen {
+
+
+//     :hover {
+//         color: blue;
+//     }
+// }
+
+// .modal {
+//     font-size: 12px;
+// }
+
+// .modal>.header {
+//     width: 100%;
+//     border-bottom: 1px solid gray;
+//     font-size: 18px;
+//     text-align: center;
+//     padding: 5px;
+// }
+
+// .modal>.content {
+//     width: 100%;
+//     padding: 10px 5px;
+// }
+
+// .modal>.actions {
+//     width: 100%;
+//     padding: 10px 5px;
+//     margin: auto;
+//     text-align: center;
+// }
+
+// .modal>.close {
+//     cursor: pointer;
+//     position: absolute;
+//     display: block;
+//     padding: 2px 5px;
+//     line-height: 20px;
+//     right: -10px;
+//     top: -10px;
+//     font-size: 24px;
+//     background: #ffffff;
+//     border-radius: 18px;
+//     border: 1px solid #cfcece;
+// }
+
+
+
+
+
+// .close {
+//     cursor: pointer;
+//     position: absolute;
+//     display: block;
+//     padding: 2px 5px;
+//     line-height: 20px;
+//     right: -10px;
+//     top: -10px;
+//     font-size: 24px;
+//     background: #ffffff;
+//     border-radius: 18px;
+//     border: 1px solid #cfcece;
+// }
+
+
+
+
+// #cancelBtn {
+//     background-color: crimson;
+// }
+
+// /** BEGIN: Non Openmrs CSS **/
+// @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+// * {
+// 	font-family: "Roboto";
+// }
+// div.container {
+// 	display: flex;
+// 	align-items: flex-start;
+// 	justify-content: space-around;
+// 	margin-top: 30px;
+// 	border: 1px solid whitesmoke;
+// 	padding: 21px;
+// 	border-radius: 4px;
+// }
+// h4.title {
+// 	text-align: center;
+// 	margin-bottom: 45px;
+// }
+// :root {
+// 	--omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+// 	--omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+// 	--omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+// 	--omrs-color-interaction: #1e4bd1;
+// 	--omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+// 	--omrs-color-danger: #b50706;
+// 	--omrs-color-bg-low-contrast: #eff1f2;
+// 	--omrs-color-ink-high-contrast: #121212;
+// 	--omrs-color-bg-high-contrast: #ffffff;
+
+// }
+// /** END: Non Openmrs CSS **/
+// div.omrs-input-group {
+//   margin-bottom: 1.5rem;
+//   position: relative;
+//   width: 20.4375rem;
+// }
+
+// /* Input*/
+// .omrs-input-underlined > input,
+// .omrs-input-filled > input {
+// 	border: none;
+// 	border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+// 	width: 100%;
+// 	height: 2rem;
+// 	font-size: 1.0625rem;
+// 	padding-left: 0.875rem;
+// 	line-height: 147.6%;
+// 	padding-top: 0.825rem;
+// 	padding-bottom: 0.5rem;
+// }
+
+// .omrs-input-underlined > input:focus,
+// .omrs-input-filled > input:focus {
+// 	outline: none;
+// }
+
+// .omrs-input-underlined > .omrs-input-label,
+// .omrs-input-filled > .omrs-input-label {
+// 	position: absolute;
+// 	top: 0.9375rem;
+// 	left: 0.875rem;
+// 	line-height: 147.6%;
+// 	color: var(--omrs-color-ink-medium-contrast);
+// 	transition: top .2s;
+// }
+
+// .omrs-input-underlined > svg,
+// .omrs-input-filled > svg {
+// 	position: absolute;
+// 	top: 0.9375rem;
+// 	right: 0.875rem;
+// 	fill: var(--omrs-color-ink-medium-contrast);
+// }
+
+// .omrs-input-underlined > .omrs-input-helper,
+// .omrs-input-filled > .omrs-input-helper {
+// 	font-size: 0.9375rem;
+// 	color: var(--omrs-color-ink-medium-contrast);
+// 	letter-spacing: 0.0275rem;
+// 	margin: 0.125rem 0.875rem;
+// }
+
+// .omrs-input-underlined > input:hover,
+// .omrs-input-filled > input:hover {
+// 	background: var(--omrs-color-interaction-minus-two);
+// 	border-color: var(--omrs-color-ink-high-contrast);
+// }
+
+// .omrs-input-underlined > input:focus + .omrs-input-label,
+// .omrs-input-underlined > input:valid + .omrs-input-label,
+// .omrs-input-filled > input:focus + .omrs-input-label,
+// .omrs-input-filled > input:valid + .omrs-input-label {
+// 	top: 0;
+// 	font-size: 0.9375rem;
+// 	margin-bottom: 32px;;
+// }
+
+// .omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
+// .omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
+// 	color: var(--omrs-color-interaction);
+// }
+
+// .omrs-input-underlined:not(.omrs-input-danger) > input:focus,
+// .omrs-input-filled:not(.omrs-input-danger) > input:focus {
+// 	border-color: var(--omrs-color-interaction);
+// }
+
+// .omrs-input-underlined:not(.omrs-input-danger) > input:focus ~ svg,
+// .omrs-input-filled:not(.omrs-input-danger) > input:focus ~ svg {
+// 	fill: var(--omrs-color-ink-high-contrast);
+// }
+
+// /** DISABLED **/
+
+// .omrs-input-underlined > input:disabled {
+// 	background: var(--omrs-color-bg-low-contrast);
+// 	cursor: not-allowed;
+// }
+
+// .omrs-input-underlined > input:disabled + .omrs-input-label,
+// .omrs-input-underlined > input:disabled ~ .omrs-input-helper{
+// 	color: var(--omrs-color-ink-low-contrast);
+// }
+
+// .omrs-input-underlined > input:disabled ~ svg {
+// 	fill: var(--omrs-color-ink-low-contrast);
+// }
+
+
+// /** DANGER **/
+
+// .omrs-input-underlined.omrs-input-danger > .omrs-input-label, .omrs-input-underlined.omrs-input-danger > .omrs-input-helper,
+// .omrs-input-filled.omrs-input-danger > .omrs-input-label, .omrs-input-filled.omrs-input-danger > .omrs-input-helper{
+// 	color: var(--omrs-color-danger);
+// }
+
+// .omrs-input-danger > svg {
+// 	fill: var(--omrs-color-danger);
+// }
+
+// .omrs-input-danger > input {
+// 	border-color: var(--omrs-color-danger);
+// }
+
+// .omrs-input-underlined > input {
+// 	background: var(--omrs-color-bg-high-contrast);
+// }
+// .omrs-input-filled > input {
+// 	background: var(--omrs-color-bg-low-contrast);
+// }
+@media (max-width:400px) {
+    // .full {
+    // 	width: 100%;
+    // 	background-color: wheat;
+    // 	height: auto;
+    // 	overflow: hidden;
+
+    // 	.contain {
+    // 		width: 100%;
+    // 		border: 1px solid;
+    // 		margin-left: 0%;
+    // 		overflow: hidden;
+
+    // 	}
+    // }
+
+    // .chatHead {
+    // 	display: flex;
+    // 	flex-direction: row;
+    // 	width: 100%;
+    // 	height: auto;
+    // 	border-bottom: 2px solid;
+
+    // 	h6 {
+    // 		margin-left: 35%;
+    // 		margin-top: 1%;
+
+    // 	}
+
+    // 	img {
+    // 		width: 30px;
+    // 		height: 30px;
+    // 		border-radius: 20pc;
+    // 		margin-top: 1%;
+    // 		margin-left: 37%;
+    // 		background-color: aqua;
+
+    // 	}
+    // }
+
+    // .chatRoom {
+
+
+    // 	position: relative;
+    // 	overflow-x: hidden;
+    // 	padding: 0px;
+    // 	height: 97vh;
+    // 	width: 100%;
+    // 	margin-bottom: 20vh;
+    // 	scroll-behavior: smooth;
+    // }
+}
+
+@media (max-width: 374px) {}
+
+
+
+.full {
+    width: 100%;
+    background-color: wheat;
+    height: auto;
+    overflow: hidden;
+
+    .contain {
+        width: 100%;
+        border: 1px solid;
+        margin-left: 0%;
+        overflow: hidden;
+        border-radius: 4%;
+    }
+
+    .chatHead {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid;
+        position: fixed;
+        top: 0;
+        background-color: wheat;
+
+        h6 {
+            margin-left: 35%;
+            margin-top: 1%;
+
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 20pc;
+            margin-top: 1%;
+            margin-left: 37%;
+            background-color: aqua;
+
+        }
+    }
+
+    .chatRoom {
+        position: relative;
+        overflow-x: hidden;
+        padding: 0px;
+        height: 85vh;
+        width: 100%;
+        margin-bottom: 20vh;
+        scroll-behavior: smooth;
+
+        .roomCov {
+
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+
+            .left {
+
+
+                .leftChat {
+                    max-width: fit-content;
+                    background: #d2d6de;
+                    border: 1px solid #d2d6de;
+                    overflow: hidden;
+                    height: auto;
+                    border: 1px solid;
+                    padding: 5%;
+                    border-radius: 17%;
+                    word-wrap: break-word;
+                    text-align: justify;
+                }
+
+
+            }
+
+            .right {
+
+
+                .rightChat {
+                    height: auto;
+                    max-width: fit-content;
+                    background-color: green;
+                    border: 1px solid yellow;
+                    color: white;
+                    float: right;
+                    padding: 5%;
+                    border-radius: 17%;
+                    word-break: break-all;
+                    word-wrap: break-word;
+                    overflow: hidden;
+                    white-space: pre-wrap;
+                    text-align: justify;
+
+                }
+
+
+
+            }
+        }
+
+
+    }
+}
+
+.coverRight {
+    height: auto;
+    width: 250px;
+    overflow: hidden;
+    float: right;
+    padding: 1.5%;
+
+    .chatUser {
+        float: right;
+        margin-right: 5%;
+    }
+
+}
+
+.cover {
+    height: auto;
+    width: 250px;
+    overflow: hidden;
+    padding: 1.5%;
+}
+
+.form-wrapper {
+    margin-left: 3%;
+    position: fixed;
+
+    bottom: 5%;
+    width: 90%;
+    background-color: white;
+    display: flex;
+}
+
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+
+}
+
+#inputFor {
+    resize: none;
+    overflow: hidden;
+    border-radius: 50px;
+    height: 10vh;
+    width: 87%;
+}
+
+#sendBut {
+
+    margin-top: 2vh;
+    margin-left: 1vh;
+
+}
+
+.chatTime {
+    font-size: 12px;
+    float: right;
+    margin-top: 0%;
+    margin-left: 2%;
+
+}
+
+.chatDate {
+    font-size: 12px;
+    float: left;
+    margin-top: 20%;
+    margin-bottom: 0px;
+}
+
+.chatUser {
+    font-size: 12px;
+}

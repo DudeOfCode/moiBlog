@@ -1,84 +1,127 @@
-
+import React, { useState, useEffect, useRef } from 'react';
+// import { useDropzone } from 'react-dropzone';
+import { auth, db } from "../../config/firebaseConfig";
+// import { getDocs, collection, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { faTrash, faPen, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
-import React, { useState, useEffect } from 'react';
-import { auth } from "../../config/firebaseConfig";
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+
+import Nabar from '../../components/navbar/Navbar';
+import home from "../../components/img/homeimage.png"
+import "./Chat.scss"
+
+import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 
 const Chat = () => {
 
-
-  const NAME = "Sabo"
+  const sendChat = useMutation(api.forum.sendChat);
   //...
-
-  // Replace the "TODO: Add mutation hook here." with:
-  // const messages = useQuery(api.messages.list) || [];
-  const sendChat = useMutation(api.chat.sendChat);
-  //...
-  const chats = useQuery(api.chat.getMessages);
-  // const messages = [
-  //   { _id: "1", user: "Alice", body: "Good morning!" },
-  //   { _id: "2", user: NAME, body: "Beautiful sunrise today" },
-  // ];
-  // TODO: Add mutation hook here.
-
+  const chats = useQuery(api.forum.getMessages);
   const [newMessageText, setNewMessageText] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
   useEffect(() => {
     // Make sure scrollTo works on button click in Chrome
     setTimeout(() => {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+      const el = document.getElementById('chatRoom');
+      // id of the chat container ---------- ^^^
+      if (el) {
+        el.scrollTop = el.scrollHeight;
+      }
     }, 0);
+
+
   }, [chats]);
 
+  useEffect(() => {
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
+    <div className='full'>
+      {(<div className='contain'>
 
-    <Popup
-      trigger={<button>Chat</button>}
-      modal nested>
-      <main className="chat">
-        <header>
-          <h1>Convex Chat</h1>
-          <p>
-            Connected as <strong>{auth?.currentUser?.email}</strong>
-          </p>
-        </header>
-        {chats?.map((chat) => (
-          <article
-            key={chat._id}
-            className={chat.user === auth?.currentUser?.email ? "message-mine" : ""}
-          >
-            <div>{chat.user}</div>
+        <div className='chatRoom' id="chatRoom">
+          <div className='chatHead'>
 
-            <p>{chat.body}</p>
-          </article>
-        ))}
-        <form
-          onSubmit={async (e) => {
+            <Link to="/"> <img src={home} alt="" /></Link>
+
+            <h6><b>EduSphere Forum</b></h6>
+
+          </div>
+          {chats?.map((chat) => (
+            <section className='roomCov'>
+
+              <div className='left'>
+
+                {chat.user != auth?.currentUser?.email &&
+                  <div className='cover'>
+
+                    <div className='leftChat'>
+                      {chat.body}
+                      <div className='chatTime'>
+                        {format(new Date(chat._creationTime), 'p')}
+                      </div>
+                    </div>
+                    <div className='chatUser'>
+                      {chat.user}
+                    </div>
+                  </div>}
+              </div>
+              <div className='right'>
+                {chat.user == auth?.currentUser?.email &&
+                  <div className='coverRight'>
+                    <div className='chatUser'>
+                      Me
+                    </div>
+                    <div className='rightChat'>
+                      {chat.body}
+                      <div className='chatTime'>
+                        {format(new Date(chat._creationTime), 'p')}
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                }
+
+              </div>
+
+            </section>
+          ))}
+
+        </div>
+        <div class="box-footer">
+          <form onSubmit={async (e) => {
             e.preventDefault();
-            await sendChat({ user: NAME, body: newMessageText });
+            await sendChat({ user: auth?.currentUser?.email, body: newMessageText });
             setNewMessageText("");
-          }}
-        >
-          <input
-            value={newMessageText}
-            onChange={async (e) => {
-              const text = e.target.value;
-              setNewMessageText(text);
-            }}
-            placeholder="Write a message…"
-          />
-          <button type="submit" disabled={!newMessageText}>
-            Send
-          </button>
-        </form>
-      </main>
-    </Popup>
-
+          }}>
+            <div class="form-wrapper">
+              <textarea type="text" id="inputFor" name="message" value={newMessageText}
+                onChange={async (e) => {
+                  const text = e.target.value;
+                  setNewMessageText(text);
+                }} placeholder="Type Message ..." class="form-control" />
+              <span class="input-group-btn">
+                <button type="submit" disabled={!newMessageText} id="sendBut" class="btn btn-warning btn-flat">Send</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>)}
+    </div >
   );
 }
-
 export default Chat
-
