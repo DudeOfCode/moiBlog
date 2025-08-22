@@ -1,8 +1,27 @@
+// .big-post {
+//     margin-top: 5%;
+//     display: block;
+//     overflow-x: hidden;
+//     justify-content: space-between;
+//     width: 100%;
+//     height: auto;
+//     flex-wrap: wrap;
+
+// }
+
+.childin {
+    display: inline-block;
+    margin-top: 0%;
+}
+
 .post {
     width: 385px;
     margin: 0px 25px 40px 25px;
     display: flex;
     flex-direction: column;
+    border: 1px solid;
+    border-radius: 10px;
+
 }
 
 .postImg {
@@ -58,4 +77,9 @@
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    text-align: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
 }

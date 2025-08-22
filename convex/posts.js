@@ -14,7 +14,7 @@ export const uploadPost = mutation({
         postBody: v.string(),
         tags: v.string(),
         uploadTime: v.string(),
-
+        like: v.optional(v.boolean())
         // category: v.string(),
         // course: v.string(),
         // type: v.string(),
@@ -32,7 +32,7 @@ export const uploadPost = mutation({
             postBody: args.postBody,
             tags: args.tags,
             uploadTime: args.uploadTime,
-
+            like: false,
             // category: args.category,
             // course: args.course,
 

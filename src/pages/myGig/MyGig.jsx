@@ -1,16 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, db } from "../../config/firebaseConfig";
-import { useMutation, useQuery } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 
-import { faTrash, faPen, faInfoCircle, faFilePdf } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import UseOnlineStatus from '../../components/UseOnlineStatus';
-
-import "./MyGig.scss"
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
 
 const MyGig = () => {
   const isOnline = UseOnlineStatus();

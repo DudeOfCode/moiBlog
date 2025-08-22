@@ -14,8 +14,10 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as allowedOrigins from "../allowedOrigins.js";
+import type * as comment from "../comment.js";
 import type * as forum from "../forum.js";
 import type * as http from "../http.js";
+import type * as likes from "../likes.js";
 import type * as messages from "../messages.js";
 import type * as posts from "../posts.js";
 import type * as sendMessages from "../sendMessages.js";
@@ -30,8 +32,10 @@ import type * as sendMessages from "../sendMessages.js";
  */
 declare const fullApi: ApiFromModules<{
   allowedOrigins: typeof allowedOrigins;
+  comment: typeof comment;
   forum: typeof forum;
   http: typeof http;
+  likes: typeof likes;
   messages: typeof messages;
   posts: typeof posts;
   sendMessages: typeof sendMessages;

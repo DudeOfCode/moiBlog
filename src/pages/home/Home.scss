@@ -1,14 +1,14 @@
-.sup {
-    background-color: rgb(119, 0, 255);
-    color: azure;
-    //    margin-left: 240px;
-    width: 100%;
-}
+// .sup {
+//     background-color: rgb(119, 0, 255);
+//     color: azure;
+//     //    margin-left: 240px;
+//     width: 100%;
+// }
 
-.cont {
-    padding: 12px;
-    height: 2000px;
-}
+// .cont {
+//     padding: 12px;
+//     height: 2000px;
+// }
 
 .person {
     display: inline-flex;
@@ -40,10 +40,471 @@
     background: #000;
 }
 
-.for-post {
+
+
+@media (max-width:550.98px) {
+    .all-home {
+        font-size: 9px;
+    }
+
+    .appInfoText {
+        font-size: 10px;
+    }
+
+    .appHead {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+        font-size: 7px;
+        padding: 10px;
+    }
+
+
+
+}
+
+@media (max-width:680.98px) {
+    .appHead {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+        font-size: 9px;
+        padding: 5px;
+    }
+
+    .appInfoText {
+        font-size: 10px;
+    }
+}
+
+
+
+.sup {
+    background-color: rgb(119, 0, 255);
+    color: azure;
+    //    margin-left: 240px;
     width: 100%;
-    display: flex;
-    overflow: hidden;
+}
+
+.all-home {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+}
+
+.for-post {
+    margin-top: 5%;
+    display: inline-flex;
     flex-direction: row;
-    word-wrap: break-word;
+    overflow-x: hidden;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+
+    // overflow-wrap: break-word;
+    //  word-break: break-all;
+}
+
+
+.cont {
+    padding: 12px;
+    height: 2000px;
+
+}
+
+.offset {
+    display: block;
+    position: relative;
+    visibility: hidden;
+    top: -97px;
+}
+
+
+
+
+.boda {
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    border: 1px solid green;
+    align-items: center;
+    border-bottom: 0px;
+
+    .appinfo {
+        margin-top: 15%;
+        height: auto;
+
+        .appInfoText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1%;
+        }
+    }
+
+    .appHead {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+
+    }
+}
+
+.under {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    border: 2px solid green;
+    border-left: 0px;
+    border-right: 0px;
+    cursor: pointer;
+}
+
+.jnow {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: #0c847c;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #e6f3f2;
+        color: #0c847c;
+        border-color: #1dbf73;
+    }
+}
+
+
+.lowerPanel {
+    background-color: #000000;
+    width: 100%;
+}
+
+.small-box-parent {
+
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 70px;
+
+    .small-box {
+        width: 22%;
+        height: 200px;
+        border: green 1px solid;
+        text-align: center;
+        overflow: hidden;
+        font-size: small;
+        padding-top: 3rem;
+
+    }
+}
+
+.bringn {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 14px;
+}
+
+.bring {
+    width: 50%;
+    justify-content: left;
+}
+
+.ent-bring {
+    margin-left: 13%;
+
+}
+
+.earn-l {
+    margin-left: 16%;
+}
+
+.no-c {
+    margin-left: 14.5%;
+}
+
+.h-works {
+    text-align: center;
+    margin-top: 15vh;
+
+    .acad {
+        font-size: small;
+        color: blue;
+    }
+}
+
+.iya-t-pos {
+    width: 30%;
+    margin-left: 13%;
+    margin-top: 20vh;
+
+    .t-pos {
+        color: blue;
+        font-size: small;
+    }
+}
+
+.iya-sc-so {
+    width: 30%;
+    margin-left: 13%;
+    margin-top: 20vh;
+
+    .sc-so {
+        color: blue;
+        font-size: small;
+    }
+}
+
+.tags {
+    padding: 3rem;
+    margin-bottom: 10%;
+
+    .tag-pikin {
+        padding: 0.5rem;
+
+
+    }
+
+    .butto {
+
+        width: auto;
+        height: auto;
+        border-radius: 7%;
+        padding: 5px;
+
+        .buttso {
+            padding: 10px;
+            border-radius: 12px;
+            background-color: lightgray;
+        }
+    }
+
+
+}
+
+//The mobile view CSS
+
+.mob-boda {
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    border: 2px solid green;
+    align-items: center;
+    border-bottom: 0px;
+    overflow: hidden;
+    word-break: all;
+
+    .mob-appinfo {
+        border: 1px solid green;
+        margin-top: 30%;
+        height: auto;
+
+
+        .mob-appInfoText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1%;
+            font-size: 12px;
+        }
+    }
+
+
+}
+
+.mob-appHead {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    padding: 12px;
+    margin-bottom: 10vh;
+}
+
+.mob-under {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    border: 2px solid green;
+    border-left: 0px;
+    border-right: 0px;
+    cursor: pointer;
+    font-size: 11px;
+
+}
+
+.mob-jnow {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: #0c847c;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #e6f3f2;
+        color: #0c847c;
+        border-color: #1dbf73;
+    }
+}
+
+.mob-small-box-parent {
+
+    margin-left: 0px;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+
+    .mob-small-box {
+
+        height: auto;
+        border: green 1px solid;
+        text-align: center;
+        overflow: hidden;
+        font-size: small;
+        padding: 1rem;
+
+    }
+}
+
+.mob-bring {
+    width: 100%;
+    font-size: 12px;
+
+}
+
+.mob-ent-bring {
+    width: 100%;
+    text-align: center;
+    font-size: 2px;
+    margin-top: 10vh;
+
+}
+
+.mob-bringn {
+    font-size: 12px;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    border: #0c847c 2px solid;
+    border-radius: 17px;
+}
+
+.mob-h-works {
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 12px;
+    border-radius: 15px;
+    border-left: #0c847c 2px solid;
+    border-right: #0c847c 2px solid;
+
+    .mob-acad {
+        font-size: 10px;
+        color: blue;
+    }
+}
+
+.mob-iya-t-pos {
+    width: 100%;
+    text-align: left;
+
+    font-size: 12px;
+    overflow: hidden;
+    padding: 1rem;
+    border-left: #0c847c 2px solid;
+    border-right: #0c847c 2px solid;
+
+    .mob-t-pos {
+        color: blue;
+        font-size: 10px;
+    }
+}
+
+.mob-iya-sc-so {
+    width: 100%;
+    margin-left: 0%;
+    font-size: 12px;
+    overflow: hidden;
+    border-radius: 17px;
+    border-bottom: 2px solid green;
+    padding: 1rem;
+    border-left: #0c847c 2px solid;
+    border-right: #0c847c 2px solid;
+
+    .mob-sc-so {
+        color: blue;
+        font-size: 10px;
+    }
+}
+
+.mob-wh-works {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 12px;
+    border-bottom: #0c847c 2px solid;
+    border-radius: 15px;
+    border-top: #0c847c 2px solid;
+
+    .mob-acad {
+        font-size: 10px;
+        color: blue;
+    }
+}
+
+.mob-tags {
+
+    padding: 0rem;
+    margin-bottom: 10%;
+
+    .mob-tag-pikin {
+        padding: 0px;
+    }
+
+    .mob-butto {
+
+        width: auto;
+        height: auto;
+        border-radius: 7%;
+        padding: 0px;
+
+        .mob-buttso {
+            padding: 5px;
+            border-radius: 12px;
+            background-color: lightgray;
+        }
+    }
+
+
+}
+
+.others-link {
+    text-decoration: none;
 }
