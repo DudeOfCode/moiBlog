@@ -44,7 +44,11 @@ const Post = () => {
     const [name] = useState(() => auth?.currentUser?.email);
 
     const link = "https://fantastic-oriole-450.convex.site/getImage?storageId="
-
+    const fullStyle = {
+        "width": "100%",
+        "height": "100%",
+        "border": "2px solid red"
+    }
     return (
         <div>
             {posts.map((post) => (
@@ -72,9 +76,21 @@ const Post = () => {
                                 </span>
                             </div>
                             <span className="postTitle">
-                                <Link to="/post/abc" className="p-link">
+                                <Popup contentStyle={fullStyle} modal nested trigger={<Link className="p-link" >
                                     {post.title}
-                                </Link>
+                                </Link>} >
+                                    {close => (
+                                        <div className='whole-post'>
+                                            <div className="titleCloseBtn">
+                                                <button className="close" onClick={close}>
+                                                    &times;
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                </Popup>
+
                             </span>
                             <hr />
                             <span className="postDate">Posted by: {post.author == auth?.currentUser?.email ? "You" : post.author}</span>

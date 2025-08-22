@@ -85,7 +85,6 @@ const Home = () => {
         </div>
 
 
-
         {/* <div className='small-box-parent'>
           <div className='small-box'>
             <div className='up-space'></div>
