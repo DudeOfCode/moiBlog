@@ -1,6 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider, Routes, Route } from "react-router-dom";
 import Nabar from "./components/navbar/Navbar";
+import Post from "./components/post/Post";
 import ProtectedRoutes from "./components/protected/ProtectedRoutes";
 import HomeNav from "./components/homeNavbar/HomeNav";
 import Home from "./pages/home/Home";
@@ -18,110 +19,23 @@ import MyProgress from "./pages/myProgress/MyProgress";
 import MyComp from "./pages/myComp/MyComp";
 import Video from "./pages/video/Video";
 import Settings from "./pages/settings/Settings";
+import ContactUs from "./pages/contactUs/ContactUs";
+import Dpost from "./pages/dPost/Dpost";
 
 
+import { useMutation, useQuery } from "convex/react";
+import { api } from "/convex/_generated/api";
 
 function App() {
+  const posts = useQuery(api.posts.list) || [];
+
   const Layout = () => {
     return (
       <Outlet />)
     {/* <HomeNav /> */ }
   };
 
-  // const router = createBrowserRouter([
-  //   {
 
-
-  //     element: <ProtectedRoutes />,
-  //     children: [
-
-  //       {
-
-
-  //         element: <Layout />,
-  //         children: [
-  //           {
-  //             path: "/add",
-  //             element: <Add />,
-  //           },
-  //         ]
-  //       },
-  //       {
-  //         path: "/test",
-  //         element: <Test />,
-  //       },
-  //       {
-  //         path: "/dashboard",
-  //         element: <MyGig />,
-  //       },
-
-  //       // {
-  //       //   path: "/gig/:id",
-  //       //   element: <Gig />,
-  //       // },
-  //     ],
-  //   },
-  //   {
-
-  //     path: "/",
-  //     element: <Layout />,
-  //     children: [
-
-  //       {
-  //         path: "/",
-  //         element: <Home />,
-  //       },
-
-  //       {
-  //         path: "/add",
-  //         element: <Add />,
-  //       },
-  //       // {
-  //       //   path: "/gig/:id",
-  //       //   element: <Gig />,
-  //       // },
-  //     ],
-  //   },
-  //   {
-  //     path: "/register",
-  //     element: <Register />,
-  //   },
-  //   {
-  //     path: "/login",
-  //     element: <Login />,
-  //   },
-  //   {
-  //     path: "/progress",
-  //     element: <InPro />,
-  //   },
-  //   {
-  //     path: "/complete",
-  //     element: <Comp />,
-  //   },
-  //   {
-  //     path: "/myprogress",
-  //     element: <MyProgress />,
-  //   },
-  //   {
-  //     path: "/settings",
-  //     element: <Settings />,
-  //   },
-  //   {
-  //     path: "/mycompleted",
-  //     element: <MyComp />,
-  //   },
-  //   {
-  //     path: "/gigs",
-  //     element: <Gigs />,
-  //   },
-  //   {
-  //     path: "/chat",
-  //     element: <Chat />,
-  //   },
-
-  // ]);
-
-  // return <RouterProvider router={router} />;
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -144,6 +58,15 @@ function App() {
         <Route path="settings" element={<Settings />} />
 
         <Route path="apage" element={<Video />} />
+        {
+          posts.map((post) => (
+            <>
+              <Route path={'posts/:postId'} element={<Dpost />} />
+            </>
+          ))
+        }
+
+        <Route path="contact-us" element={<ContactUs />} />
         <Route element={<ProtectedRoutes />}>
 
           <Route path="dashboard" element={<MyGig />} />
@@ -153,7 +76,7 @@ function App() {
           {/* <Route path="settings" element={<Settings />} /> */}
         </Route>
       </Route>
-    </Routes>
+    </Routes >
   );
 }
 

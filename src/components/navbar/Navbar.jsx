@@ -156,7 +156,7 @@ function Nabar() {
                 <span><Link to="/about" className="navOpts">About Us</Link></span>
                 <span>                 <Link to="/contact" className="navOpts">   How it Works</Link></span>
                 <span>  <Link to="/contact" className="navOpts">  Features</Link></span>
-                <span> <Link to="/contact" className="navOpts">Contact Us</Link></span>
+                <span> <Link to="/contact-us" className="navOpts">Contact Us</Link></span>
 
 
 

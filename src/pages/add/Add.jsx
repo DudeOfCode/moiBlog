@@ -11,8 +11,12 @@ import DefaultImage from "./google.png"
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
+import parse from 'html-react-parser';
 const Add = () => {
+
 
 
   // New project States
@@ -172,33 +176,47 @@ const Add = () => {
 
   return (
     <section>
-      <div className="add">
-        <div className="container">
-          <h1>Upload Your Project</h1>
-          <form>
-            <div className="sections">
+      <form>
+        <div className="all-add">
+          <h1>Upload a New Post</h1>
 
-              <div className="info">
+          <label  >Choose a cover Image:   <input
+            multiple
+            type="file"
+            ref={imageInput}
+            onChange={(e) => (setSelectedImage(e.target.files[0]) & setnewCovImg(e.target.value))}
+          /></label>
+          <p></p>
+          <label>Title:
+            <input
+              type="text"
+              placeholder="Title..."
+              onChange={(e) => setNewProjectTitle(e.target.value)}
+            />
+          </label>
+          <br />
+          <label> Select a Tag:
+            <select name="cats" id="cats" onChange={(e) => setnewCategory(e.target.value)} >
+              <option value="Select an Option">Select an Option</option>
+              <option Value="Lifestyle">Lifestyle</option>
+              <option Value="Reality shows">Reality shows</option>
+              <option Value="Academics">Academics</option>
+              <option Value="Love and Romance">Love and Romance</option>
+              <option Value="Cooking">Cooking</option>
+              <option Value="Celebrities">Celebrities</option>
+              <option Value="Medical">Medical</option>
+              <option Value="Fantasy">Fantasy</option>
+              <option Value="Folktale">Folktale</option>
+              <option Value="Technology and Programming">Technology and Programming</option>
+              <option Value="Movies and Series">Movies and Series</option>
+              <option Value="Games and Applications">Games and Applications</option>
+              <option Value="Others">Others</option>
 
-                <label>Title</label>
-                <input
-                  type="text"
-                  placeholder="Title..."
-                  onChange={(e) => setNewProjectTitle(e.target.value)}
-                />
-                <label> What are you uploading</label>
-                <select name="cats" id="cats" onChange={(e) => setnewCategory(e.target.value)} >
-                  <option value="Select an Option">Select an Option</option>
-                  <option Value="Articles">Articles</option>
-                  <option Value="Assignment">Assignment</option>
-                  <option Value="Data Analysis">Data Analysis</option>
-                  <option Value="Journals">Journals</option>
-                  <option Value="Project">Project</option>
-                  <option Value="Suggestion">Suggestion</option>
-                  <option Value="Web Development">Web Development</option>
 
-                </select>
-                {/* <label >Course</label>
+            </select>
+          </label>
+          <p></p>
+          {/* <label >Course</label>
                 <select required name="cats" id="cats" onChange={(e) => setnewCourses(e.target.value)}>
                   <option value="Select an Option">Select an option</option>
                   <option Value="Physics">Physics</option>
@@ -208,15 +226,9 @@ const Add = () => {
                 </select> */}
 
 
-                <label  >Cover Image</label>
-                <input
-                  multiple
-                  type="file"
-                  ref={imageInput}
-                  onChange={(e) => (setSelectedImage(e.target.files[0]) & setnewCovImg(e.target.value))}
-                />
 
-                {/* 
+
+          {/* 
                 <label >Upload Doc</label>
 
                 <input
@@ -228,45 +240,41 @@ const Add = () => {
 
 
 
-                {/* <label >Tags</label>
+          {/* <label >Tags</label>
                 <input type="text" onChange={(e) => setnewTag(e.target.value)} placeholder="e.g. One-page web design" /> */}
-                <label >Body</label>
-                <textarea required name="" id="" onChange={(e) => setNewDescription(e.target.value)} placeholder="Short description of your service" cols="30" rows="10"></textarea>
+          <label >Body</label>
+          <ReactQuill theme='snow' required value={newDescription} onChange={setNewDescription} placeholder="Type the body of your Post here..... " className="t-editor" />
 
-                <label  >Date Posted
 
-                  {/* <select required name="cats" >
+          <label  >Date Posted
+
+            {/* <select required name="cats" >
                     <option value="Select an Option">Select an option</option>
                     <option Value="days">day</option>
                     <option Value="months">month</option>
                     <option Value="weeks">week</option>
                     <option Value="years">year</option>
                   </select> */}
-                </label>
-                <input type="text"
-                  required
-                  onChange={(e) => setnewTime(e.target.value)}
-                />
+          </label>
+          <input type="text"
+            required
+            onChange={(e) => setnewTime(e.target.value)}
+          />
 
-                {/* <label >Price</label> */}
-                {/* <select required name="cats" onChange={(e) => setnewCourses(e.target.value)}>
+          {/* <label >Price</label> */}
+          {/* <select required name="cats" onChange={(e) => setnewCourses(e.target.value)}>
                   <option value="Select an Option">Select an option</option>
                   <option Value="$">$</option>
                   <option Value="N">N</option>
                 </select> */}
-                {/* <input type="number" onChange={(e) => setnewPrice(Number(e.target.value))} /> */}
+          {/* <input type="number" onChange={(e) => setnewPrice(Number(e.target.value))} /> */}
 
-              </div>
 
-            </div>
-            <br />
-            <button className='post-button' onClick={handleUploadPost}> Post</button>
-          </form>
+
         </div>
-
-
-      </div>
-
+        <br />
+        <button className='post-button' onClick={handleUploadPost}> Post</button>
+      </form>
     </section>
   );
 

@@ -1,0 +1,26 @@
+.big-cont {
+    flex-wrap: wrap;
+
+}
+
+.contact-div {
+    align-items: center;
+    border: 2px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.cont-cont {
+
+    height: 180px;
+}

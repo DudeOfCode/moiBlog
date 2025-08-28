@@ -9,6 +9,8 @@ import { auth } from "../../config/firebaseConfig";
 import UseOnlineStatus from '../../components/UseOnlineStatus';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+
+import parse from 'html-react-parser';
 const Post = () => {
 
     const [user, setUser] = useState("");
@@ -76,20 +78,24 @@ const Post = () => {
                                 </span>
                             </div>
                             <span className="postTitle">
-                                <Popup contentStyle={fullStyle} modal nested trigger={<Link className="p-link" >
-                                    {post.title}
-                                </Link>} >
+                                <Link to={'/posts/' + post._id} className="">{post.title}</Link>
+
+                                {/* <Popup id='' contentStyle={fullStyle} modal nested trigger={
+                                    <a href={post._id} className="">{post.title}</a>
+                                } >
                                     {close => (
                                         <div className='whole-post'>
                                             <div className="titleCloseBtn">
                                                 <button className="close" onClick={close}>
-                                                    &times;
+                                                    <a href='#'>&times;</a>
                                                 </button>
+                                                <span>Posted by: {post.author}</span>
+                                                <span>{parse(post.postBody)}</span>
                                             </div>
                                         </div>
                                     )}
 
-                                </Popup>
+                                </Popup> */}
 
                             </span>
                             <hr />
@@ -97,7 +103,7 @@ const Post = () => {
                             <span className="postDate">1 hour ago</span>
                         </div>
                         <p className="postDesc">
-                            {post.postBody.slice(0, 90)}
+                            {parse(post.postBody.slice(0, 90))}
                         </p>
                     </div>
                 </div>
