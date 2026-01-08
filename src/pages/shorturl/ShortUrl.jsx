@@ -10,6 +10,13 @@ import { Link } from "react-router-dom";
 import { auth, db } from "../../config/firebaseConfig";
 
 
+import Nabar from '../../components/navbar/Navbar';
+import "./ShortUrl.scss";
+
+
+
+import { faTrash, faPen, faInfoCircle, faFilePdf, faExternalLink, faCopy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ShortUrl = () => {
 
@@ -72,22 +79,35 @@ const ShortUrl = () => {
 
 
     return (
-        <div> <h1>Shorten Multiple Urls</h1>
+        <div>
+            <Nabar />
+            <div className='shortpg'>
 
-            <br />
-            <input type="text" onChange={(e) => setNewLink(e.target.value)} /> <button onClick={handleUploadLink}>Shorten Url</button>
+                <div>
+                    <h1>Shorten Multiple Urls</h1>
 
-            <div>
-                {urls.map((url) => (
+                    <br />
+
+                    <input className='linkinpt' type="text" onChange={(e) => setNewLink(e.target.value)} placeholder="Type the long link here" /> <button className='shortbtn' onClick={handleUploadLink}>Shorten Url</button>
+                    <br />
                     <div>
-                        {'https://moiBlog/shorturl/' + url._id.slice(0, 7)}
-                        <Link to={'/shorturl/' + url._id.slice(0, 7)}> <button className='mob-jnow'>Visit</button> </Link>
-                        <button className='mob-jnow' onClick={() => deleteLink(url._id)}>Delete</button>
-                    </div>
+                        {urls.map((url) => (
+                            url.author == auth?.currentUser?.email ? (<div>
+                                {'https://moiBlog/shorturl/' + url._id.slice(0, 7)}
 
-                ))
-                }
+                                <Link to={'/shorturl/' + url._id.slice(0, 7)}>  <FontAwesomeIcon className="extLink" icon={faExternalLink} /></Link>
+                                <FontAwesomeIcon className="trash" icon={faTrash} onClick={() => deleteLink(url._id)} />
+                                <FontAwesomeIcon className="trash" icon={faCopy} />
+
+                            </div>) : null
+
+                        ))
+                        }
+                    </div>
+                </div>
+
             </div>
+
         </div>
     )
 }
