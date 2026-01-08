@@ -109,31 +109,29 @@ const ShortUrl = () => {
 
                     <input className='linkinpt' type="text" onChange={(e) => setNewLink(e.target.value)} placeholder="Type the long link here" /> <button className='shortbtn' onClick={handleUploadLink}>Shorten Url</button>
                     <br />
-                    <div>
-                        {urls.map((url) => (
-                            url.author == auth?.currentUser?.email ? (<div>
-                                {'https://moi-blog-bbfsp4ogj-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)}
+                    <ol>
+                        <div>
+                            {urls.map((url) => (
+                                url.author == auth?.currentUser?.email ? (<li key={url._id}>
+                                    {'https://moi-blog-qz9jniyq1-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)}
 
-                                <div>
-                                    <CopyToClipboard text={'https://moi-blog-bbfsp4ogj-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)} >
-                                        <FontAwesomeIcon className="delT" icon={faCopy} />
-                                    </CopyToClipboard>
-                                    <Link to={'/shorturl/' + url._id.slice(0, 7)}>  <FontAwesomeIcon className="extLink" icon={faExternalLink} /></Link>
-                                    <FontAwesomeIcon className="trash" icon={faTrash} onClick={() => deleteLink(url._id)} />
-
-
-                                </div>
-
-                                <script src="https://www.highperformanceformat.com/d54edb7de106eda6519d6c2c7a9a7436/invoke.js"></script>
+                                    <div>
+                                        <CopyToClipboard text={'https://moi-blog-qz9jniyq1-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)} >
+                                            <FontAwesomeIcon className="delT" icon={faCopy} />
+                                        </CopyToClipboard>
+                                        <Link to={'/shorturl/' + url._id.slice(0, 7)}>  <FontAwesomeIcon className="extLink" icon={faExternalLink} /></Link>
+                                        <FontAwesomeIcon className="trash" icon={faTrash} onClick={() => deleteLink(url._id)} />
 
 
-                                <script src="https://pl28432289.effectivegatecpm.com/49/ae/d8/49aed8f7e585c0be04aafb23474a7709.js"></script>
+                                    </div>
+                                </li>) : null
 
-                            </div>) : null
+                            ))
+                            }
+                        </div>
 
-                        ))
-                        }
-                    </div>
+                    </ol>
+
                 </div>
 
             </div>
