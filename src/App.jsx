@@ -61,7 +61,7 @@ function App() {
         <Route path="settings" element={<Settings />} />
 
         <Route path="apage" element={<Video />} />
-        <Route path="shorturl" element={<ShortUrl />} />
+
         {
           posts.map((post) => (
             <>
@@ -78,6 +78,7 @@ function App() {
           {/* <Route path="countdown" element={<CountdownTimer />} /> */}
           <Route path="chat" element={<Chat />} />
           {/* <Route path="settings" element={<Settings />} /> */}
+          <Route path="shorturl" element={<ShortUrl />} />
         </Route>
 
         <Route element={<RedirUrl />}>

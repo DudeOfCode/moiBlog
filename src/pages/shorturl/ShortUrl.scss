@@ -1,27 +1,27 @@
 .shortpg {
     display: flex;
-  justify-content: center;
-  align-items: center;
- 
-width: 100%;
-height: auto;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
 }
 
-.linkinpt{
+.linkinpt {
     height: 50px;
     width: 300px;
     border: 1px solid;
-border-top-left-radius: 9999px;
-border-bottom-left-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
 }
 
-.shortbtn{
+.shortbtn {
     height: 50px;
     border-top-right-radius: 9999px;
-        border-bottom-right-radius: 9999px;
-color: white;
+    border-bottom-right-radius: 9999px;
+    color: white;
     padding: 10px 20px;
-  
+
     border: 2px solid white;
     background-color: #0c847c;
     cursor: pointer;
@@ -34,66 +34,70 @@ color: white;
     }
 }
 
-.delT{
-   
+.delT {
+
     color: white;
-        padding: 10px 20px;
-        border-radius: 15px;
-        border: 2px solid white;
-        background-color: #840c16;
-        cursor: pointer;
-    
-        &:hover {
-            background-color: #1dbf73 !important;
-            border-color: #1dbf73 !important;
-            color: white !important;
-        }
+    border-radius: 9999px;
+    border: 2px solid black;
+    background-color: #840c16;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #1dbf73 !important;
+        border-color: #1dbf73 !important;
+        color: white !important;
+    }
 }
 
-.extLink{
+.extLink {
     color: white;
-        padding: 2px 2px;
-        border-radius: 15px;
-        border: 2px solid white;
+    border-radius: 9999px;
+    border: 2px solid gray;
+    background-color: #0c847c;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #e6f3f2;
+        color: #0c847c;
+        border-color: #1dbf73;
+    }
+}
+
+.reg {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: #0c847c;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #e6f3f2;
+        color: #0c847c;
+        border-color: #1dbf73;
+    }
+}
+
+.log {
+    color: #088478;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid white;
+    background-color: #bcdcdc;
+    cursor: pointer;
+
+
+    &:hover {
         background-color: #0c847c;
-        cursor: pointer;
-    
-    
-        &:hover {
-            background-color: #e6f3f2;
-            color: #0c847c;
-            border-color: #1dbf73;
-        }
+        border-color: 2px #1dbf73;
+        color: white;
+    }
 }
 
-         .reg {
-             color: white;
-             padding: 10px 20px;
-             border-radius: 15px;
-             border: 2px solid white;
-             background-color: #0c847c;
-             cursor: pointer;
-    
-    
-             &:hover {
-                 background-color: #e6f3f2;
-                 color: #0c847c;
-                 border-color: #1dbf73;
-             }
-         }
-    
-         .log {
-             color: #088478;
-             padding: 10px 20px;
-             border-radius: 15px;
-             border: 1px solid white;
-             background-color: #bcdcdc;
-             cursor: pointer;
-    
-    
-             &:hover {
-                 background-color: #0c847c;
-                 border-color: 2px #1dbf73;
-                 color: white;
-             }
-         }
+.smthop {
+    height: 300px;
+    width: 200px;
+}
