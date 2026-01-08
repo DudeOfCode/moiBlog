@@ -97,26 +97,26 @@ const Chat = () => {
 
             </section>
           ))}
+          <div class="box-footer">
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              await sendChat({ user: auth?.currentUser?.email, body: newMessageText });
+              setNewMessageText("");
+            }}>
+              <div class="form-wrapper">
+                <textarea type="text" id="inputFor" name="message" value={newMessageText}
+                  onChange={async (e) => {
+                    const text = e.target.value;
+                    setNewMessageText(text);
+                  }} placeholder="Type Message ..." class="form-control" />
+                <span class="input-group-btn">
+                  <button type="submit" disabled={!newMessageText} id="sendBut" class="btn btn-warning btn-flat">Send</button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
 
-        </div>
-        <div class="box-footer">
-          <form onSubmit={async (e) => {
-            e.preventDefault();
-            await sendChat({ user: auth?.currentUser?.email, body: newMessageText });
-            setNewMessageText("");
-          }}>
-            <div class="form-wrapper">
-              <textarea type="text" id="inputFor" name="message" value={newMessageText}
-                onChange={async (e) => {
-                  const text = e.target.value;
-                  setNewMessageText(text);
-                }} placeholder="Type Message ..." class="form-control" />
-              <span class="input-group-btn">
-                <button type="submit" disabled={!newMessageText} id="sendBut" class="btn btn-warning btn-flat">Send</button>
-              </span>
-            </div>
-          </form>
-        </div>
       </div>)}
     </div >
   );

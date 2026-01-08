@@ -13,7 +13,7 @@ export const uploadPost = mutation({
         title: v.string(),
         postBody: v.string(),
         tags: v.string(),
-        uploadTime: v.string(),
+        //uploadTime: v.optional(v.string()),
         like: v.optional(v.boolean())
         // category: v.string(),
         // course: v.string(),
@@ -31,16 +31,11 @@ export const uploadPost = mutation({
             title: args.title,
             postBody: args.postBody,
             tags: args.tags,
-            uploadTime: args.uploadTime,
+            //uploadTime: args.uploadTime,
             like: false,
             // category: args.category,
             // course: args.course,
 
-            // type: args.type,
-            // worker: args.worker,
-            // complete: false,
-            // incomplete: true,
-            // onProgress: false,
         });
     },
 });
@@ -65,3 +60,56 @@ export const list = query(async (ctx) => {
     return messages;
 
 });
+
+
+export const deleteProj = mutation({
+    args: { id: v.id("messages"), storageId: v.id("_storage") },
+    handler: async (ctx, args) => {
+        if (args.storageId) {
+            await ctx.storage.delete(args.storageId);
+        }
+        await ctx.db.delete(args.id);
+    },
+});
+
+
+
+export const updatePostBody = mutation({
+    args: {
+        id: v.optional(v.id('posts')),
+        postBody: v.optional(v.string()),
+
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            postBody: args.postBody,
+
+        });
+    }
+})
+export const updateTitle = mutation({
+    args: {
+        id: v.optional(v.id('posts')),
+        title: v.optional(v.string()),
+
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            title: args.title,
+
+        });
+    }
+})
+export const updateTag = mutation({
+    args: {
+        id: v.optional(v.id('posts')),
+        tags: v.optional(v.string()),
+
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            tags: args.tags,
+
+        });
+    }
+})

@@ -8,3 +8,18 @@
     align-items: center;
     justify-content: center;
 }
+
+.prof-imgo {
+    height: 100px;
+    width: 100px;
+    border-radius: 9999;
+
+}
+
+.deet-bio {
+    display: flex;
+    border: 90px solid green;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 2%;
+}

@@ -5,6 +5,7 @@
 .mobile-view {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: white;
     color: black;
     position: sticky;
@@ -45,6 +46,7 @@
 .navbar {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: white;
     color: black;
     position: sticky;

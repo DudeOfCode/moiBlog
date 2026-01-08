@@ -1,8 +1,9 @@
 import "./App.css";
-import { createBrowserRouter, Outlet, RouterProvider, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider, Routes, Route, Navigate, useParams } from "react-router-dom";
 import Nabar from "./components/navbar/Navbar";
 import Post from "./components/post/Post";
 import ProtectedRoutes from "./components/protected/ProtectedRoutes";
+import RedirUrl from "./components/redirUrl/RedirUrl";
 import HomeNav from "./components/homeNavbar/HomeNav";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -20,19 +21,21 @@ import MyComp from "./pages/myComp/MyComp";
 import Video from "./pages/video/Video";
 import Settings from "./pages/settings/Settings";
 import ContactUs from "./pages/contactUs/ContactUs";
-import Dpost from "./pages/dPost/Dpost";
 
+import Dpost from "./pages/dPost/Dpost";
+import ShortUrl from "./pages/shorturl/ShortUrl";
+import ShortUrlShow from "./pages/shorturlshow/ShortUrlShow";
 
 import { useMutation, useQuery } from "convex/react";
 import { api } from "/convex/_generated/api";
 
 function App() {
+  const urls = useQuery(api.newurl.list) || [];
   const posts = useQuery(api.posts.list) || [];
 
   const Layout = () => {
-    return (
-      <Outlet />)
-    {/* <HomeNav /> */ }
+    return (<Outlet />)
+
   };
 
 
@@ -58,6 +61,7 @@ function App() {
         <Route path="settings" element={<Settings />} />
 
         <Route path="apage" element={<Video />} />
+        <Route path="shorturl" element={<ShortUrl />} />
         {
           posts.map((post) => (
             <>
@@ -74,6 +78,17 @@ function App() {
           {/* <Route path="countdown" element={<CountdownTimer />} /> */}
           <Route path="chat" element={<Chat />} />
           {/* <Route path="settings" element={<Settings />} /> */}
+        </Route>
+
+        <Route element={<RedirUrl />}>
+
+          {
+            urls.map((url) => (
+              <>
+                <Route path={'shorturl/:urlId'} element={<ShortUrlShow />} />
+              </>
+            ))
+          }
         </Route>
       </Route>
     </Routes >

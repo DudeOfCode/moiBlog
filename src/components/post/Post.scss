@@ -71,7 +71,6 @@
     font-size: 14px;
     line-height: 24px;
     color: #444444;
-    margin-top: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -84,6 +83,22 @@
     overflow-wrap: break-word;
 }
 
-.whole-post{
-    width:100%;
+.whole-post {
+    width: 100%;
+}
+
+.small-o-body {
+    overflow-x: hidden;
+    height: 200px;
+    scroll-behavior: smooth;
+    border-right: 0.001px solid;
+    text-align: center;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    padding: 2rem;
+    flex-wrap: wrap;
+    color: #444444;
 }

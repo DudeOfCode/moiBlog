@@ -1,8 +1,9 @@
 import "./settings.css";
-import Sidebar from "../../components/sidebar/Sidebar";
+import Sidebars from "../../components/sidebar/Sidebar";
 
-export default function Settings() {
-    return (<div className="settings" > <Sidebar />
+function Settings() {
+    return (<div className="settings" >
+        <Sidebars />
         <div className="settingsWrapper" >
             <div className="settingsTitle" >
                 <span className="settingsTitleUpdate" >Update Your Account</span>
@@ -26,3 +27,4 @@ export default function Settings() {
                     className="settingsPPInput"
                 /> </div> <label>Username</label> <input type="text" placeholder="e.g Maline" name="name" /> <label>Email</label> <input type="email" placeholder="safak@gmail.com" name="email" /> <label>Password</label> <input type="password" placeholder="Password" name="password" /> <button className="settingsSubmitButton" type="submit" > Update </button> </form> </div></div>);
 }
+export default Settings;

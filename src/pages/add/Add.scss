@@ -56,6 +56,7 @@
     flex-direction: column;
     width: 80%;
     flex-wrap: wrap;
+    padding: 2rem;
 }
 
 .post-button {
@@ -69,8 +70,15 @@
     border-radius: 17%;
 }
 
-.t-editor{
-height: 300px;
-background: white;
-overflow: hidden;
+.t-editor {
+    height: 400px;
+    max-width: 1000px;
+    width: 1000px;
+    background: white;
+    overflow: hidden;
+    overflow-x: none;
+    //border: 0.001px solid;
+    resize: none;
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
 }

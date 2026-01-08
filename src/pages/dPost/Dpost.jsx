@@ -16,6 +16,9 @@ const Dpost = () => {
     //     let { postId } = useParams()
     //     console.log(postId)
     // }
+    const link = "https://fantastic-oriole-450.convex.site/getImage?storageId="
+
+
     return (
         <div >
 
@@ -28,11 +31,16 @@ const Dpost = () => {
                         {
                             postId == post._id ?
                                 (
-                                    <div>
+                                    <div className='under-whole'>
+                                        <div className='post-img-div'>
+                                            <img src={link + post.storageId} className='post-img' alt="" />
+                                        </div>
                                         <span> <h1><b>{post.title}</b></h1></span>
                                         <span>Posted by: {post.author}</span>
                                         <span>{parse(post.postBody)}</span>
-
+                                        <div>
+                                            <input type="text" /> <button>Send</button>
+                                        </div>
                                     </div>
                                 ) : null
                         }

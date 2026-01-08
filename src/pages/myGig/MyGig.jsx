@@ -1,9 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { auth, db } from "../../config/firebaseConfig";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../../convex/_generated/api";
 
 
+import { faTrash, faPen, faInfoCircle, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import UseOnlineStatus from '../../components/UseOnlineStatus';
+
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
+import './MyGig.scss'
+import Nabar from '../../components/navbar/Navbar';
 const MyGig = () => {
-  const isOnline = UseOnlineStatus();
+  // const isOnline = UseOnlineStatus();
 
   const [projectList, setProjectList] = useState([]);
   const [updatedTitle, setUpdatedTitle] = useState("");
@@ -43,11 +55,17 @@ const MyGig = () => {
   return (
 
     <div className="App">
+      <Nabar />
       <div>
         <div>
-          <div className='details'><p ><h1>{auth?.currentUser?.email}</h1></p>
-            <p><h2>{auth?.currentUser?.displayName}</h2></p>
+          <div className='deet-bio'>
+            <img src="" alt="" className='prof-imgo' />
+            <div className='details'><p ><h1>Email: {auth?.currentUser?.email}</h1></p>
+              <p><h2>Username: {auth?.currentUser?.displayName}</h2></p>
+            </div>
+            <span>My name is somebody abu something doing something to help something to becme something in life and not to become something dangerous to other things that could become something too.</span>
           </div>
+
           <ul >
             {messages.map((message) => (
 
@@ -56,7 +74,7 @@ const MyGig = () => {
                   <section>
 
                     < div class="card">
-                      <div class="card-img" color="red"><san></san></div>
+                      <div class="card-img" color="red"><span></span></div>
                       <div class="card-info">
                         <p class="text-title">{message.title} </p>
                         <p class="text-body">{message.postBody}</p>

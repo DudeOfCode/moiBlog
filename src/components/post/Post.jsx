@@ -10,6 +10,8 @@ import UseOnlineStatus from '../../components/UseOnlineStatus';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+
+import { format } from 'date-fns';
 import parse from 'html-react-parser';
 const Post = () => {
 
@@ -98,13 +100,16 @@ const Post = () => {
                                 </Popup> */}
 
                             </span>
-                            <hr />
+
                             <span className="postDate">Posted by: {post.author == auth?.currentUser?.email ? "You" : post.author}</span>
-                            <span className="postDate">1 hour ago</span>
+                            <span className="postDate"> Posted on: {format(new Date(post._creationTime), 'dd/MM/yyyy')}</span>
                         </div>
-                        <p className="postDesc">
-                            {parse(post.postBody.slice(0, 90))}
-                        </p>
+                        <div className="small-o-body">
+
+                            {parse(post.postBody.slice(0, 400))} <Link to={'/posts/' + post._id}>read more.......</Link>
+
+                        </div>
+
                     </div>
                 </div>
             ))}

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Add.scss"
+import Nabar from '../../components/navbar/Navbar';
 
 import { useState, useEffect, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
@@ -14,6 +15,9 @@ import { api } from "../../../convex/_generated/api";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+
+
+import { format } from 'date-fns';
 import parse from 'html-react-parser';
 const Add = () => {
 
@@ -99,7 +103,7 @@ const Add = () => {
         title: newProjectTitle,
         postBody: newDescription,
         tags: newCategory,
-        uploadTime: newTime,
+        //uploadTime: "so good",
 
         // price: newPrice,
         // category: newCategory,
@@ -176,6 +180,7 @@ const Add = () => {
 
   return (
     <section>
+      <Nabar />
       <form>
         <div className="all-add">
           <h1>Upload a New Post</h1>
@@ -246,20 +251,20 @@ const Add = () => {
           <ReactQuill theme='snow' required value={newDescription} onChange={setNewDescription} placeholder="Type the body of your Post here..... " className="t-editor" />
 
 
-          <label  >Date Posted
+          {/* <label  >Date Posted */}
 
-            {/* <select required name="cats" >
+          {/* <select required name="cats" >
                     <option value="Select an Option">Select an option</option>
                     <option Value="days">day</option>
                     <option Value="months">month</option>
                     <option Value="weeks">week</option>
                     <option Value="years">year</option>
                   </select> */}
-          </label>
+          {/* </label>
           <input type="text"
             required
             onChange={(e) => setnewTime(e.target.value)}
-          />
+          /> */}
 
           {/* <label >Price</label> */}
           {/* <select required name="cats" onChange={(e) => setnewCourses(e.target.value)}>

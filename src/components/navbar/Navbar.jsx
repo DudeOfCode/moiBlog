@@ -151,10 +151,10 @@ function Nabar() {
           </div>
 
           <div className="links">
-            {pathname == "/" &&
-              <div className="links">
+            {pathname == "/" ?
+              (<div className="links">
                 <span><Link to="/about" className="navOpts">About Us</Link></span>
-                <span>                 <Link to="/contact" className="navOpts">   How it Works</Link></span>
+                <span>                 <Link to="/contact" className="navOpts">   FAQ</Link></span>
                 <span>  <Link to="/contact" className="navOpts">  Features</Link></span>
                 <span> <Link to="/contact-us" className="navOpts">Contact Us</Link></span>
 
@@ -164,7 +164,20 @@ function Nabar() {
                 {/* <Link to="/test" style={{ textDecoration: 'none' }} className="navOpts">   <span>How it Works</span></Link>
               <Link to="/test" style={{ textDecoration: 'none' }} className="navOpts">   <span>Features</span></Link>
               <Link to="/test" style={{ textDecoration: 'none' }} className="navOpts">   <span>Contact Us</span></Link> */}
-              </div>
+              </div>) : (
+                <div className="links">
+                  <span><Link to="/about" className="navOpts">About Us</Link></span>
+                  <span>  <Link to="/contact" className="navOpts">  Features</Link></span>
+                  <span> <Link to="/contact-us" className="navOpts">Contact Us</Link></span>
+                  <span>   <Link to="/contact" className="navOpts">   FAQ</Link></span>
+
+
+
+                  {/* <Link to="/test" style={{ textDecoration: 'none' }} className="navOpts">   <span>How it Works</span></Link>
+              <Link to="/test" style={{ textDecoration: 'none' }} className="navOpts">   <span>Features</span></Link>
+              <Link to="/test" style={{ textDecoration: 'none' }} className="navOpts">   <span>Contact Us</span></Link> */}
+                </div>
+              )
 
             }
 
