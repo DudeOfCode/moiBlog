@@ -93,7 +93,7 @@ const ShortUrl = () => {
                     <div>
                         {urls.map((url) => (
                             url.author == auth?.currentUser?.email ? (<div>
-                                {'https://moiBlog/shorturl/' + url._id.slice(0, 7)}
+                                {'https://moi-blog-bbfsp4ogj-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)}
 
                                 <Link to={'/shorturl/' + url._id.slice(0, 7)}>  <FontAwesomeIcon className="extLink" icon={faExternalLink} /></Link>
                                 <FontAwesomeIcon className="trash" icon={faTrash} onClick={() => deleteLink(url._id)} />
