@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useContext } from 'react';
 import "./Login.css"
-import { Link } from 'react-router-dom';
+import { Link, Outlet, Navigate } from 'react-router-dom';
+
 import { auth, googleProvider } from "../../config/firebaseConfig";
 import {
   signInWithEmailAndPassword,
@@ -25,9 +26,12 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, pwd);
+      return <Navigate to="/shorturl" />
     } catch (err) {
       console.log(err);
     }
+    await window.location.reload(true);
+    window.location.replace("/shorturl")
   };
 
   useEffect(() => {
@@ -38,9 +42,13 @@ const Login = () => {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+
     } catch (err) {
       console.error(err);
     }
+    await window.location.reload(true);
+    window.location.replace("/shorturl")
+
   };
 
 
@@ -50,7 +58,7 @@ const Login = () => {
       <section>
         <div className="wrapper">
           <div className="logo">
-            <Link to="/"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxx46BgSMG_BlM4CANwlEqOcHTmY8qT2pstw&s" alt="" />
+            <Link to="/shorturl"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxx46BgSMG_BlM4CANwlEqOcHTmY8qT2pstw&s" alt="" />
             </Link>
           </div>
           <div className="text-center mt-4 name">
@@ -79,7 +87,9 @@ const Login = () => {
             <button className="btn mt-3">Login</button>
           </form>
 
-          <button onClick={signInWithGoogle} className="google-button" > <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-pks9lbdv.png" alt="" className="google-icon" />Sign in with Google</button>
+
+          <button className="google-button" onClick={signInWithGoogle} > <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-pks9lbdv.png" alt="" className="google-icon" />Sign in with Google</button>
+
           <div className="text-center fs-6">
             <Link to="/forge"> <a href="#" >Forgot password?</a></Link>
             or <Link to="/register"><a href="#">Sign up</a>

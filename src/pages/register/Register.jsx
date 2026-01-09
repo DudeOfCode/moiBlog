@@ -38,6 +38,8 @@ const Register = () => {
         } catch (err) {
             console.log(err);
         }
+        await window.location.reload(true);
+        window.location.replace("/shorturl")
     };
 
     const signInWithGoogle = async () => {
@@ -46,6 +48,8 @@ const Register = () => {
         } catch (err) {
             console.error(err);
         }
+        await window.location.reload(true);
+        window.location.replace("/shorturl")
     };
 
 

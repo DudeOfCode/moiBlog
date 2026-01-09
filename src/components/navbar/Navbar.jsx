@@ -113,7 +113,7 @@ function Nabar() {
                 Settings
               </Link> */}
 
-              <Link className="linke" to="/" onClick={logout}>
+              <Link className="linke" to="/login" onClick={logout}>
                 Logout
               </Link>
             </div>
@@ -232,7 +232,7 @@ function Nabar() {
                   <Link className="link" to="/settings">
                     Settings
                   </Link>
-                  <Link className="link" to="/" onClick={logout}>
+                  <Link className="link" to="/login" onClick={logout}>
                     Logout
                   </Link>
                 </div>}

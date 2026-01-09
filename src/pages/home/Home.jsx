@@ -67,9 +67,7 @@ const Home = () => {
               </b>
               </h1>
             </p>
-            <p>Conquer your academic challenges with ease. Find help or lend a <br />
-              hand - your success starts here! Connecting students to share <br />
-              knowledge, complete academic tasks and earn rewards</p>
+            <p>A site where you can shorten Unlimited Links</p>
           </div>
 
 

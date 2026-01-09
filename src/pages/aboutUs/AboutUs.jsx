@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./AboutUs.scss"
 const AboutUs = () => {
     return (
@@ -6,7 +7,7 @@ const AboutUs = () => {
             <div className="cont">
                 <a id="about-us"> </a>
                 <h1>About Us</h1>
-                <p>We are a programming comany that focuses on solving tangible problems that can help improve human life and make them lazy </p>
+                <p>We are a programming comany that focuses on solving tangible problems that can help improve human life. <Link to="/contact-us">Contact us</Link>  to know more about us </p>
                 <div className='person'>
                     <span>  <img
                         className='son'

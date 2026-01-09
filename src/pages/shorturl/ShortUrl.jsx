@@ -101,10 +101,12 @@ const ShortUrl = () => {
     return (
         <div>
             <Nabar />
+            <h1>Hello You are Logged in as {
+                auth?.currentUser?.email}</h1>
             <div className='shortpg'>
 
                 <div>
-                    <h1>Shorten Multiple Urls</h1>
+                    <h1>Shorten Unlimited Urls</h1>
                     <br />
 
                     <input className='linkinpt' type="text" onChange={(e) => setNewLink(e.target.value)} placeholder="Type the long link here" /> <button className='shortbtn' onClick={handleUploadLink}>Shorten Url</button>
@@ -131,7 +133,7 @@ const ShortUrl = () => {
                         </div>
 
                     </ol>
-                  
+
                 </div>
 
             </div>
