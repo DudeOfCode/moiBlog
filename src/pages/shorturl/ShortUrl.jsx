@@ -46,7 +46,7 @@ const ShortUrl = () => {
 
             })
 
-            window.alert("Done brrrrooooooo")
+            window.alert("Link successfully created")
 
         } catch (error) {
             console.error(error);
@@ -62,7 +62,7 @@ const ShortUrl = () => {
 
             await navigator.clipboard.wrriteText(newText)
 
-            window.alert("COPIED brrrrooooooo")
+            window.alert("Link copied successfully")
 
         } catch (error) {
             console.error(error);
@@ -85,7 +85,7 @@ const ShortUrl = () => {
 
             })
 
-            window.alert("Deleted oooo brrrrooooooo")
+            window.alert("Link has been deleted successfully")
 
         } catch (error) {
             console.error(error);
@@ -118,13 +118,11 @@ const ShortUrl = () => {
                                     {'https://moi-blog-qz9jniyq1-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)}
 
                                     <div>
-                                        <CopyToClipboard text={'https://moi-blog-qz9jniyq1-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)} >
+                                        <CopyToClipboard text={'https://moi-blog.vercel.app/shorturl/' + url._id.slice(0, 7)} >
                                             <FontAwesomeIcon className="delT" icon={faCopy} />
                                         </CopyToClipboard>
                                         <Link to={'/shorturl/' + url._id.slice(0, 7)}>  <FontAwesomeIcon className="extLink" icon={faExternalLink} /></Link>
                                         <FontAwesomeIcon className="trash" icon={faTrash} onClick={() => deleteLink(url._id)} />
-
-
                                     </div>
                                 </li>) : null
 
@@ -137,7 +135,14 @@ const ShortUrl = () => {
                 </div>
 
             </div>
-
+            <iframe src={"https://www.effectivegatecpm.com/dii77p9t?key=98c49c529edafd20a02f28fd7641ef72"} title={"title"}
+                width="200px"
+                height="500px" // Adjust height as needed
+                frameBorder="4"
+                // Optional security attributes
+                sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" />
         </div>
     )
 }
