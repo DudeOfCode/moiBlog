@@ -38,15 +38,19 @@ const ShortUrl = () => {
         // const convexSiteUrl = import.meta.env.VITE_CONVEX_SITE_URL;
 
         try {
+            if (auth?.currentUser) {
+                await uploadUrl({
 
-            await uploadUrl({
+                    author: name,
+                    dLink: newLink,
 
-                author: name,
-                dLink: newLink,
+                })
+                window.alert("Link successfully created")
+            } else {
+                window.alert("Please login to start shortening links")
+            }
 
-            })
 
-            window.alert("Link successfully created")
 
         } catch (error) {
             console.error(error);
@@ -101,21 +105,29 @@ const ShortUrl = () => {
     return (
         <div>
             <Nabar />
-            <h1>Hello You are Logged in as {
-                auth?.currentUser?.email}</h1>
+            {auth?.currentUser ? (<h1>Hello You are Logged in as {
+                auth?.currentUser?.email}</h1>) : <h1>Please login to use this program</h1>}
+
             <div className='shortpg'>
 
                 <div>
                     <h1>Shorten Unlimited Urls</h1>
                     <br />
-
+                    <iframe src={"https://www.effectivegatecpm.com/dii77p9t?key=98c49c529edafd20a02f28fd7641ef72"} title={"title"}
+                        width="100%"
+                        height="auto" // Adjust height as needed
+                        frameBorder="4"
+                        // Optional security attributes
+                        sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade" />
                     <input className='linkinpt' type="text" onChange={(e) => setNewLink(e.target.value)} placeholder="Type the long link here" /> <button className='shortbtn' onClick={handleUploadLink}>Shorten Url</button>
                     <br />
                     <ol>
                         <div>
                             {urls.map((url) => (
                                 url.author == auth?.currentUser?.email ? (<li key={url._id}>
-                                    {'https://moi-blog-qz9jniyq1-mustfang.vercel.app/shorturl/' + url._id.slice(0, 7)}
+                                    {'https://moi-blog.vercel.app/shorturl/' + url._id.slice(0, 7)}
 
                                     <div>
                                         <CopyToClipboard text={'https://moi-blog.vercel.app/shorturl/' + url._id.slice(0, 7)} >
@@ -135,14 +147,36 @@ const ShortUrl = () => {
                 </div>
 
             </div>
-            <iframe src={"https://www.effectivegatecpm.com/dii77p9t?key=98c49c529edafd20a02f28fd7641ef72"} title={"title"}
-                width="200px"
-                height="500px" // Adjust height as needed
-                frameBorder="4"
-                // Optional security attributes
-                sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade" />
+            <div className='adsl'>
+                < div id="container-0742577e83059792439d50430649a949"></div>
+                <iframe src={"https://www.effectivegatecpm.com/dii77p9t?key=98c49c529edafd20a02f28fd7641ef72"} title={"title"}
+                    width="auto"
+                    height="auto" // Adjust height as needed
+                    frameBorder="4"
+                    // Optional security attributes
+                    sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade" />
+                <iframe src={"https://www.effectivegatecpm.com/dii77p9t?key=98c49c529edafd20a02f28fd7641ef72"} title={"title"}
+                    width="auto"
+                    height="auto" // Adjust height as needed
+                    frameBorder="4"
+                    // Optional security attributes
+                    sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade" />
+                <iframe src={"https://www.effectivegatecpm.com/dii77p9t?key=98c49c529edafd20a02f28fd7641ef72"} title={"title"}
+                    width="auto"
+                    height="auto" // Adjust height as needed
+                    frameBorder="4"
+                    // Optional security attributes
+                    sandbox="allow-scripts allow-forms allow-popups allow-same-origin"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade" />
+
+
+            </div>
+
         </div>
     )
 }

@@ -77,6 +77,18 @@ function Nabar() {
             </h5>
           </Link>
         )}
+        {!auth?.currentUser ? (<span>
+          <Link to="/register">
+            Register
+          </Link>
+          <span>/</span>
+          <Link to="/login">Login </Link>
+        </span>) : <Link  onClick={logout}>
+          Logout
+        </Link>
+
+        }
+
         <div className="nav-topbar">  <Popup
           contentStyle={contentStyle}
           trigger={<FontAwesomeIcon className="men-nav" icon={faBars} />}
@@ -225,8 +237,8 @@ function Nabar() {
                   </Link>
                   <Link className="link" to="/messages">
                     Messages
-                    </Link>
-                    
+                  </Link>
+
                   <Link className="link" to="/messages">
                     Messages
                   </Link>

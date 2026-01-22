@@ -81,9 +81,8 @@ function App() {
           {/* <Route path="countdown" element={<CountdownTimer />} /> */}
           <Route path="chat" element={<Chat />} />
           {/* <Route path="settings" element={<Settings />} /> */}
-          <Route path="shorturl" element={<ShortUrl />} />
         </Route>
-
+        <Route path="shorturl" element={<ShortUrl />} />
         <Route element={<RedirUrl />}>
 
           {
