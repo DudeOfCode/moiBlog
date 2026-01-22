@@ -225,7 +225,8 @@ function Nabar() {
                   </Link>
                   <Link className="link" to="/messages">
                     Messages
-                  </Link>
+                    </Link>
+                    
                   <Link className="link" to="/messages">
                     Messages
                   </Link>
