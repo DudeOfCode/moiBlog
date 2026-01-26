@@ -22,6 +22,7 @@ import Video from "./pages/video/Video";
 import Settings from "./pages/settings/Settings";
 import ContactUs from "./pages/contactUs/ContactUs";
 import AboutUs from "./pages/aboutUs/AboutUs";
+import Leads from "./pages/leads/Leads";
 
 import Dpost from "./pages/dPost/Dpost";
 import ShortUrl from "./pages/shorturl/ShortUrl";
@@ -74,6 +75,9 @@ function App() {
         <Route path="contact-us" element={<ContactUs />} />
 
         <Route path="about" element={<AboutUs />} />
+
+        <Route path="leads" element={<Leads />} />
+
         <Route element={<ProtectedRoutes />}>
 
           <Route path="dashboard" element={<MyGig />} />
